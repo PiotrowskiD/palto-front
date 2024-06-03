@@ -4,6 +4,7 @@ import Navbar from "./components/navbar/Navbar.jsx";
 import About from "./components/about/About.jsx";
 import LifePackage from "./components/life-package/LifePackage.jsx";
 import SlidingTiles from "./components/sliding-tiles/SlidingTiles.jsx";
+import Help from "./components/help/Help.jsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <About />
       <LifePackage />
       <SlidingTiles />
+      <Help />
     </>
   );
 }
