@@ -7,6 +7,7 @@ import SlidingTiles from "./components/sliding-tiles/SlidingTiles.jsx";
 import Help from "./components/help/Help.jsx";
 import Paperwork from "./components/paperwork/Paperwork.jsx";
 import Advisory from "./components/advisory/Advisory.jsx";
+import Consulting from "./components/consulting/Consulting.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Help />
       <Paperwork />
       <Advisory />
+      <Consulting />
     </>
   );
 }

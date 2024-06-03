@@ -198,3 +198,56 @@ nav .options-wrapper {
     line-height: 31.2px;
     margin-top: 24px;
 }
+
+.consulting-section {
+    display: flex;
+    gap: 197px;
+    background-color: var(--primary-yellow);
+    height: 100vh;
+    align-items: center;
+    padding: 0 197px;
+}
+
+.consulting-section img {
+    height: 80%;
+}
+
+.consulting-section .text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.consulting-section .text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.consulting-section h1 {
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 60px;
+}
+
+.consulting-section p {
+    font-size: 24px;
+    line-height: 31.2px;
+    font-weight: 500;
+}
+
+.consulting-section ul {
+    font-size: 24px;
+    line-height: 31.2px;
+    font-weight: 500;
+}
+
+.consulting-section ul li {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+}
+
+.consulting-section ul li svg {
+    display: inline;
+}
