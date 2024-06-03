@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <section className={"contact-section relative"}>
       <div className="left max-w-[430px] relative z-[2]">
-        <h1>Let's talk.</h1>
+        <h1>Let&apos;s talk.</h1>
         <ContactForm />
       </div>
       <div className="right max-h-[100%] absolute right-0 z-[1]">
