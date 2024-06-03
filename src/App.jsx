@@ -6,6 +6,7 @@ import LifePackage from "./components/life-package/LifePackage.jsx";
 import SlidingTiles from "./components/sliding-tiles/SlidingTiles.jsx";
 import Help from "./components/help/Help.jsx";
 import Paperwork from "./components/paperwork/Paperwork.jsx";
+import Advisory from "./components/advisory/Advisory.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <SlidingTiles />
       <Help />
       <Paperwork />
+      <Advisory />
     </>
   );
 }

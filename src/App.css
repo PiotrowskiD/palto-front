@@ -172,3 +172,29 @@ nav .options-wrapper {
     max-width: 743px;
     text-align: right;
 }
+
+.advisory-section .tile-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.advisory-section .tile {
+    background: var(--primary-yellow);
+    border-radius: 16px;
+    width: 70%;
+    padding: 40px;
+}
+
+.advisory-section .tile h3 {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+.advisory-section .tile p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31.2px;
+    margin-top: 24px;
+}
