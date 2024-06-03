@@ -73,6 +73,13 @@ export default function About() {
           </div>
         </div>
       </div>
+      <div className="contact-wrapper flex flex-col items-center mt-[80px] gap-[40px]">
+        <p className={"font-500 text-[32px] leading-[41.6px] text-center"}>
+          We'll provide you with the best care to <br />
+          unlock your true potential.
+        </p>
+        <button className="btn-primary">Contact us</button>
+      </div>
     </section>
   );
 }
