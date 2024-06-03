@@ -5,6 +5,7 @@ import About from "./components/about/About.jsx";
 import LifePackage from "./components/life-package/LifePackage.jsx";
 import SlidingTiles from "./components/sliding-tiles/SlidingTiles.jsx";
 import Help from "./components/help/Help.jsx";
+import Paperwork from "./components/paperwork/Paperwork.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <LifePackage />
       <SlidingTiles />
       <Help />
+      <Paperwork />
     </>
   );
 }
