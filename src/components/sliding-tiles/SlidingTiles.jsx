@@ -7,7 +7,7 @@ import Img4 from "../../assets/sliding-tiles/4.png";
 
 export default function SlidingTiles() {
   return (
-    <section className="sliding-tiles mt-[187.5px] px-[40px]">
+    <section className="sliding-tiles px-[40px] h-[100vh] flex items-center justify-between">
       <div className="tiles-wrapper grid grid-cols-4 gap-[40px] justify-between">
         <div className="tile">
           <img src={Img1} alt="" />
