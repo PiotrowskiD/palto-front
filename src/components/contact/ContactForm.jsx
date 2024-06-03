@@ -8,9 +8,9 @@ export default function ContactForm() {
       <input type="text" placeholder={"Telephone"} />
       <input type="text" placeholder={"Message"} />
       <div className="checkbox-wrapper flex gap-[16px] items-center">
-        <div className="checkbox-container">
-          <input type="checkbox" id="privacy-policy" />
-        </div>
+        {/*<div className="checkbox-container">*/}
+        {/*  <input type="checkbox" id="privacy-policy" />*/}
+        {/*</div>*/}
         <p>I agree to the Privacy Policy.</p>
       </div>
       <button className="btn-primary self-start mt-[40px]">Send message</button>

@@ -10,6 +10,7 @@ import Advisory from "./components/advisory/Advisory.jsx";
 import Consulting from "./components/consulting/Consulting.jsx";
 import Struggling from "./components/struggling/Struggling.jsx";
 import Contact from "./components/contact/Contact.jsx";
+import Footer from "./components/footer/Footer.jsx";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Consulting />
       <Struggling />
       <Contact />
+      <Footer />
     </>
   );
 }

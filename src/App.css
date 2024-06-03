@@ -356,3 +356,16 @@ nav .options-wrapper {
     display: inline-block;
     border-radius: 4px;
 }
+
+footer {
+    background-color: var(--primary-black);
+    padding: 69px 40px;
+    color: var(--primary-yellow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .left {
+    color: var(--primary-purple);
+}
