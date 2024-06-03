@@ -8,6 +8,10 @@
     --dark-yellow: #CECA5C;
 }
 
+body {
+    color: var(--primary-black);
+}
+
 .heroarea-wrapper {
     height: 100vh;
     background-image: url("/hero/hero-background.webp");
@@ -28,4 +32,21 @@ button.btn-primary {
 
 button.btn-primary:hover {
     background-color: var(--dark-yellow);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav .options-wrapper {
+    background-color: var(--primary-white);
+    align-self: start;
+    padding: 14.5px 32px 12.5px 32px;
+    border-radius: 108px;
+    display: flex;
+    gap: 16px;
+    font-size: 18px;
+    font-weight: 500;
 }
