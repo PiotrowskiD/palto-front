@@ -100,3 +100,22 @@ nav .options-wrapper {
     font-weight: 500;
     margin-top: 25px;
 }
+
+.life-package h1 {
+    color: var(--primary-black);
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 95px;
+    letter-spacing: -3px;
+    text-align: center;
+}
+
+.life-package h1 img {
+    display: inline;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.life-package h1 span {
+    color: var(--primary-yellow);
+}
