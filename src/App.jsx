@@ -9,6 +9,7 @@ import Paperwork from "./components/paperwork/Paperwork.jsx";
 import Advisory from "./components/advisory/Advisory.jsx";
 import Consulting from "./components/consulting/Consulting.jsx";
 import Struggling from "./components/struggling/Struggling.jsx";
+import Contact from "./components/contact/Contact.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Advisory />
       <Consulting />
       <Struggling />
+      <Contact />
     </>
   );
 }

@@ -304,3 +304,55 @@ nav .options-wrapper {
 .struggling-section ul li svg {
     display: inline;
 }
+
+.contact-section {
+    background-color: var(--primary-purple);
+    height: 100vh;
+    padding: 0 197px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-section h1 {
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 80px;
+}
+
+.contact-form input {
+    color: #565551;
+    padding: 16px 15.5px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.contact-form input:focus {
+    border: none;
+    outline: none;
+}
+
+.contact-form input::placeholder {
+    color: #565551;
+}
+
+.contact-form p {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    gap: 16px;
+}
+
+.contact-form input[type='checkbox'] {
+    opacity: 0;
+    position: absolute;
+}
+
+.contact-form p::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--primary-black);
+    display: inline-block;
+    border-radius: 4px;
+}
