@@ -10,6 +10,7 @@
 
 body {
     color: var(--primary-black);
+    background-color: var(--primary-white);
 }
 
 .heroarea-wrapper {
@@ -49,4 +50,53 @@ nav .options-wrapper {
     gap: 16px;
     font-size: 18px;
     font-weight: 500;
+}
+
+.about-section .tiles-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 0 40px;
+    margin-top: 80px;
+}
+
+.about-section .tiles-wrapper .tile {
+    background-color: var(--primary-yellow);
+    display: flex;
+    gap: 40px;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.about-section .tiles-wrapper .tile:nth-child(2) {
+    background-color: var(--primary-blue);
+}
+
+.about-section .tiles-wrapper .tile:nth-child(3) {
+    background-color: var(--primary-green);
+}
+
+.about-section .tiles-wrapper .tile:nth-child(4) {
+    background-color: var(--primary-purple);
+}
+
+.about-section .tiles-wrapper .tile img {
+    max-width: 240px;
+    max-height: 240px;
+}
+
+.about-section .tiles-wrapper .tile h3 {
+    color: var(--primary-black);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.about-section .tiles-wrapper .tile p {
+    color: var(--primary-black);
+    font-size: 18px;
+    line-height: 25.2px;
+    font-weight: 500;
+    margin-top: 25px;
 }
