@@ -177,12 +177,13 @@ nav .options-wrapper {
 .advisory-section .tile-wrapper {
     display: flex;
     justify-content: center;
+    padding-left: 197px;
+    padding-right: 197px;
 }
 
 .advisory-section .tile {
     background: var(--primary-yellow);
     border-radius: 16px;
-    width: 70%;
     padding: 40px;
 }
 
