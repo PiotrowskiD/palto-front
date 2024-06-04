@@ -29,6 +29,11 @@ button.btn-primary {
     border-radius: 63px;
     color: var(--primary-black);
     transition: 0.3s;
+
+    @media (max-width: 600px) {
+        font-size: 20px;
+        padding: 14px 28px 16px 28px;
+    }
 }
 
 button.btn-primary:hover {
