@@ -1,6 +1,23 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import MobileMenu from "./MobileMenu.jsx";
 
 export default function Navbar() {
+  const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
+
+  const handleMobileMenuToggle = () => {
+    setIsMobileMenuToggled(!isMobileMenuToggled);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 996) {
+        setIsMobileMenuToggled(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <nav className={"flex p-[40px] w-full justify-between items-center"}>
       <svg
@@ -48,6 +65,27 @@ export default function Navbar() {
           Paperwork
         </a>
       </div>
+      <div
+        className="mobile-menu-toggle hidden 996px:block cursor-pointer"
+        onClick={handleMobileMenuToggle}
+      >
+        <svg
+          width="30"
+          height="20"
+          viewBox="0 0 30 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 20V16.6667H30V20H0ZM0 11.6667V8.33333H30V11.6667H0ZM0 3.33333V0H30V3.33333H0Z"
+            fill="#FEFDFB"
+          />
+        </svg>
+      </div>
+      <MobileMenu
+        isMobileMenuToggled={isMobileMenuToggled}
+        handleMobileMenuToggle={handleMobileMenuToggle}
+      />
     </nav>
   );
 }

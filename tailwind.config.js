@@ -5,6 +5,7 @@ export default {
     screens: {
       "996px": { max: "996px" },
       "600px": { max: "600px" },
+      "500px": { max: "500px" },
     },
     extend: {},
   },

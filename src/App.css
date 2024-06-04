@@ -8,6 +8,10 @@
     --dark-yellow: #CECA5C;
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
     color: var(--primary-black);
     background-color: var(--primary-white);
@@ -56,6 +60,10 @@ nav .options-wrapper {
     gap: 16px;
     font-size: 18px;
     font-weight: 500;
+
+    @media (max-width: 996px) {
+        display: none;
+    }
 }
 
 nav .options-wrapper .single-option {
@@ -461,4 +469,20 @@ footer .left {
     border: solid #093824;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
+}
+
+.mobile-menu-wrapper {
+    transition: 0.5s ease-in-out;
+    z-index: 150;
+}
+
+.mobile-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 149;
 }
