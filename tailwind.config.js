@@ -4,6 +4,7 @@ export default {
   theme: {
     screens: {
       "1280px": { max: "1280px" },
+      "1100px": { max: "1100px" },
       "996px": { max: "996px" },
       "600px": { max: "600px" },
       "500px": { max: "500px" },

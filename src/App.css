@@ -290,12 +290,25 @@ nav .options-wrapper .single-option:hover {
         padding-left: 40px;
         padding-right: 40px;
     }
+
+    @media (max-width: 1100px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 600px) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
 .advisory-section .tile {
     background: var(--primary-yellow);
     border-radius: 16px;
     padding: 40px;
+
+    @media (max-width: 600px) {
+        padding: 20px;
+    }
 }
 
 .advisory-section .tile h3 {
@@ -303,6 +316,11 @@ nav .options-wrapper .single-option:hover {
     font-size: 40px;
     line-height: 40px;
     text-transform: uppercase;
+
+    @media (max-width: 600px) {
+        font-size: 24px;
+        line-height: 24px;
+    }
 }
 
 .advisory-section .tile p {
@@ -310,6 +328,12 @@ nav .options-wrapper .single-option:hover {
     font-size: 24px;
     line-height: 31.2px;
     margin-top: 24px;
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+        line-height: 22.4px;
+        margin-top: 12px;
+    }
 }
 
 .consulting-section {
