@@ -8,14 +8,14 @@ import Image4 from "../../assets/about/4.png";
 export default function About() {
   return (
     <section className={"about-section"}>
-      <div className="header-wrapper flex flex-col items-center gap-[40px] mt-[120px]">
-        <h1 className="font-extrabold text-[80px] uppercase leading-[80px] text-center">
+      <div className="header-wrapper flex flex-col items-center gap-[40px] mt-[120px] 600px:gap-[16px] 600px:mt-[60px] 600px:px-[16px]">
+        <h1 className="font-[800] text-[80px] uppercase leading-[80px] text-center 996px:text-[60px] 996px:leading-[60px] 600px:text-[36px] 600px:leading-[34.2px]">
           We understand <br />
           your dilemmas
         </h1>
         <p
           className={
-            "font-500 text-[32px] leading-[41.6px] text-[#343331] text-center"
+            "font-500 text-[32px] leading-[41.6px] text-[#343331] text-center 600px:text-[20px] 600px:leading-[26px]"
           }
         >
           A full-time job and freelancing have their <br />
@@ -24,7 +24,9 @@ export default function About() {
       </div>
       <div className="tiles-wrapper">
         <div className="tile">
-          <img src={Image1} alt="" />
+          <div className="image-wrapper">
+            <img src={Image1} alt="" />
+          </div>
           <div className="text">
             <h3>Freelance dream</h3>
             <p>
@@ -36,7 +38,9 @@ export default function About() {
           </div>
         </div>
         <div className="tile">
-          <img src={Image2} alt="" />
+          <div className="image-wrapper">
+            <img src={Image2} alt="" />
+          </div>
           <div className="text">
             <h3>Freedom vs office</h3>
             <p>
@@ -47,7 +51,9 @@ export default function About() {
           </div>
         </div>
         <div className="tile">
-          <img src={Image3} alt="" />
+          <div className="image-wrapper">
+            <img src={Image3} alt="" />
+          </div>
           <div className="text">
             <h3>44% of Burnouts</h3>
             <p>
@@ -60,7 +66,9 @@ export default function About() {
           </div>
         </div>
         <div className="tile">
-          <img src={Image4} alt="" />
+          <div className="image-wrapper">
+            <img src={Image4} alt="" />
+          </div>
           <div className="text">
             <h3>We got you covered</h3>
             <p>
@@ -73,9 +81,14 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="contact-wrapper flex flex-col items-center mt-[80px] gap-[40px]">
-        <p className={"font-500 text-[32px] leading-[41.6px] text-center"}>
-          We'll provide you with the best care to <br />
+      <div className="contact-wrapper flex flex-col items-center mt-[80px] gap-[40px] 600px:px-[16px]">
+        <p
+          className={
+            "font-[500] text-[32px] leading-[41.6px] text-center 600px:text-[20px] 600px:leading-[26px]"
+          }
+        >
+          We'll provide you with the best care to{" "}
+          <br className={"600px:hidden"} />
           unlock your true potential.
         </p>
         <button className="btn-primary">Contact us</button>
