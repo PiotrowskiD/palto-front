@@ -7,8 +7,8 @@ import Img4 from "../../assets/sliding-tiles/4.png";
 
 export default function SlidingTiles() {
   return (
-    <section className="sliding-tiles px-[40px] h-[100vh] flex items-center justify-between">
-      <div className="tiles-wrapper grid grid-cols-4 gap-[40px] justify-between">
+    <section className="sliding-tiles px-[40px] h-[100vh] flex items-center justify-between 1280px:h-auto 1280px:py-[187.5px] 1280px:justify-center 600px:py-[60px] 600px:px-[16px]">
+      <div className="tiles-wrapper grid grid-cols-4 gap-[40px] justify-between 1280px:grid-cols-2 600px:grid-cols-1">
         <div className="tile">
           <img src={Img1} alt="" />
           <h3>Work wisely to earn more</h3>
