@@ -9,7 +9,7 @@
 }
 
 html {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
@@ -485,4 +485,10 @@ footer .left {
     background-color: black;
     opacity: 0.5;
     z-index: 149;
+}
+
+nav svg.logo {
+    @media (max-width: 600px) {
+        width: 169px;
+    }
 }
