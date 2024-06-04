@@ -343,20 +343,8 @@ nav .options-wrapper {
     font-weight: 500;
     display: flex;
     gap: 16px;
-}
-
-.contact-form input[type='checkbox'] {
-    opacity: 0;
-    position: absolute;
-}
-
-.contact-form p::before {
-    content: '';
-    width: 24px;
-    height: 24px;
-    border: 3px solid var(--primary-black);
-    display: inline-block;
-    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
 }
 
 footer {
@@ -370,4 +358,45 @@ footer {
 
 footer .left {
     color: var(--primary-purple);
+}
+
+/* Style for the custom checkmark */
+
+.custom-checkbox {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.custom-checkbox input {
+    display: none;
+}
+
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px; /* Adjust this to match your desired checkmark size */
+    width: 24px; /* Adjust this to match your desired checkmark size */
+    background-color: transparent;
+    border: 3px solid var(--primary-black);
+    border-radius: 4px;
+}
+
+.custom-checkbox input:checked + .checkmark {
+    background-color: var(--primary-yellow); /* Yellow background color when checked */
+    border: none;
+}
+
+/* Style for the custom checkmark when the checkbox is checked */
+.custom-checkbox input:checked + .checkmark:after {
+    content: "";
+    position: absolute;
+    left: 7px; /* Adjust this to center the checkmark */
+    top: 2px; /* Adjust this to center the checkmark */
+    width: 10px;
+    height: 16px;
+    border: solid #093824;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
 }
