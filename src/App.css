@@ -248,6 +248,10 @@ nav .options-wrapper .single-option:hover {
     align-items: end;
     gap: 40px;
     padding: 80px 40px;
+
+    @media (max-width: 600px) {
+        padding: 60px 16px;
+    }
 }
 
 .help-section h1 {
@@ -256,6 +260,11 @@ nav .options-wrapper .single-option:hover {
     line-height: 60px;
     max-width: 900px;
     text-align: right;
+
+    @media (max-width: 600px) {
+        font-size: 24px;
+        line-height: 24px;
+    }
 }
 
 .help-section p {
@@ -264,6 +273,11 @@ nav .options-wrapper .single-option:hover {
     line-height: 41.6px;
     max-width: 743px;
     text-align: right;
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+        line-height: 22.4px;
+    }
 }
 
 .advisory-section .tile-wrapper {
