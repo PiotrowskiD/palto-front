@@ -8,7 +8,11 @@ export default function ContactForm() {
   };
 
   return (
-    <div className={"contact-form flex flex-col gap-[20px] mt-[80px]"}>
+    <div
+      className={
+        "contact-form flex flex-col gap-[20px] mt-[80px] 600px:mt-[40px]"
+      }
+    >
       <input type="text" placeholder={"Name"} />
       <input type="text" placeholder={"Email"} />
       <input type="text" placeholder={"Telephone"} />

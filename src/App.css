@@ -23,6 +23,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @media (max-width: 600px) {
+        background-position: 65%;
+    }
 }
 
 button.btn-primary {
@@ -248,6 +252,10 @@ nav .options-wrapper .single-option:hover {
     align-items: end;
     gap: 40px;
     padding: 80px 40px;
+
+    @media (max-width: 600px) {
+        padding: 60px 16px;
+    }
 }
 
 .help-section h1 {
@@ -256,6 +264,11 @@ nav .options-wrapper .single-option:hover {
     line-height: 60px;
     max-width: 900px;
     text-align: right;
+
+    @media (max-width: 600px) {
+        font-size: 24px;
+        line-height: 24px;
+    }
 }
 
 .help-section p {
@@ -264,6 +277,11 @@ nav .options-wrapper .single-option:hover {
     line-height: 41.6px;
     max-width: 743px;
     text-align: right;
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+        line-height: 22.4px;
+    }
 }
 
 .advisory-section .tile-wrapper {
@@ -276,12 +294,25 @@ nav .options-wrapper .single-option:hover {
         padding-left: 40px;
         padding-right: 40px;
     }
+
+    @media (max-width: 1100px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 600px) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
 .advisory-section .tile {
     background: var(--primary-yellow);
     border-radius: 16px;
     padding: 40px;
+
+    @media (max-width: 600px) {
+        padding: 20px;
+    }
 }
 
 .advisory-section .tile h3 {
@@ -289,6 +320,11 @@ nav .options-wrapper .single-option:hover {
     font-size: 40px;
     line-height: 40px;
     text-transform: uppercase;
+
+    @media (max-width: 600px) {
+        font-size: 24px;
+        line-height: 24px;
+    }
 }
 
 .advisory-section .tile p {
@@ -296,6 +332,12 @@ nav .options-wrapper .single-option:hover {
     font-size: 24px;
     line-height: 31.2px;
     margin-top: 24px;
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+        line-height: 22.4px;
+        margin-top: 12px;
+    }
 }
 
 .consulting-section {
@@ -309,6 +351,16 @@ nav .options-wrapper .single-option:hover {
     @media (max-width: 1500px) {
         gap: 40px;
         padding: 0 40px;
+    }
+
+    @media (max-width: 996px) {
+        height: auto;
+        flex-direction: column;
+        padding: 60px 40px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 60px 16px;
     }
 }
 
@@ -326,24 +378,43 @@ nav .options-wrapper .single-option:hover {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @media (max-width: 600px) {
+        gap: 24px;
+    }
 }
 
 .consulting-section h1 {
     font-weight: 800;
     font-size: 60px;
     line-height: 60px;
+
+    @media (max-width: 600px) {
+        font-size: 28px;
+        line-height: 28px;
+    }
 }
 
 .consulting-section p {
     font-size: 24px;
     line-height: 31.2px;
     font-weight: 500;
+
+    @media (max-width: 600px) {
+        font-size: 20px;
+        line-height: 26px;
+    }
 }
 
 .consulting-section ul {
     font-size: 24px;
     line-height: 31.2px;
     font-weight: 500;
+
+    @media (max-width: 600px) {
+        font-size: 20px;
+        line-height: 26px;
+    }
 }
 
 .consulting-section ul li {
@@ -368,6 +439,16 @@ nav .options-wrapper .single-option:hover {
         gap: 40px;
         padding: 0 40px;
     }
+
+    @media (max-width: 996px) {
+        height: auto;
+        flex-direction: column;
+        padding: 60px 40px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 60px 16px;
+    }
 }
 
 .struggling-section img {
@@ -384,18 +465,32 @@ nav .options-wrapper .single-option:hover {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @media (max-width: 600px) {
+        gap: 20px;
+    }
 }
 
 .struggling-section h1 {
     font-weight: 800;
     font-size: 60px;
     line-height: 60px;
+
+    @media (max-width: 600px) {
+        font-size: 28px;
+        line-height: 28px;
+    }
 }
 
 .struggling-section p {
     font-size: 24px;
     line-height: 31.2px;
     font-weight: 500;
+
+    @media (max-width: 600px) {
+        font-size: 20px;
+        line-height: 26px;
+    }
 }
 
 .struggling-section ul {
@@ -420,12 +515,26 @@ nav .options-wrapper .single-option:hover {
     padding: 0 197px;
     display: flex;
     align-items: center;
+
+    @media (max-width: 996px) {
+        padding: 102px 40px;
+        height: auto;
+    }
+
+    @media (max-width: 600px) {
+        padding: 102px 16px;
+    }
 }
 
 .contact-section h1 {
     font-weight: 800;
     font-size: 80px;
     line-height: 80px;
+
+    @media (max-width: 600px) {
+        font-size: 36px;
+        line-height: 36px;
+    }
 }
 
 .contact-form input {
@@ -461,6 +570,16 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 996px) {
+        flex-direction: column;
+        align-items: start;
+        gap: 76px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 60px 16px;
+    }
 }
 
 footer .left {

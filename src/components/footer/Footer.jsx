@@ -40,19 +40,22 @@ export default function Footer() {
             fill="#DAB2ED"
           />
         </svg>
-        <p className="copyright mt-[16px] font-[500] text-[24px]">
+        <p className="copyright mt-[16px] font-[500] text-[24px] 996px:hidden">
           © {year} Palto. All rights reserved.
         </p>
       </div>
-      <div className="middle flex gap-[40px] font-[500] text-[24px]">
+      <div className="middle flex gap-[40px] font-[500] text-[24px] 996px:flex-col 996px:gap-[16px] 600px:text-[20px]">
         <a href="mailto:hi@palto.ai">hi@palto.ai</a>
         <a href="tel:+48600900800">+48 600 900 800</a>
       </div>
-      <div className="right font-[500] text-[24px]">
+      <div className="right font-[500] text-[24px] 600px:text-[20px]">
         <a href="" target="_blank">
           LinkedIn
         </a>
       </div>
+      <p className="copyright text-[#DAB2ED] font-[500] text-[24px] hidden 996px:block 600px:text-[20px]">
+        © {year} Palto. All rights reserved.
+      </p>
     </footer>
   );
 }
