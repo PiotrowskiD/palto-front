@@ -25,7 +25,7 @@ body {
     background-position: center;
 
     @media (max-width: 600px) {
-        background-position: -550px;
+        background-position: 65%;
     }
 }
 
