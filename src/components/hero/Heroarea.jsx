@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Heroarea() {
   return (
-    <div className={"heroarea-wrapper flex items-end"}>
+    <div className={"heroarea-wrapper flex items-end"} id={"heroarea"}>
       <div className="text flex flex-col justify-center items-center mb-[80px] 996px:px-[16px]">
         <motion.h1
           className={
