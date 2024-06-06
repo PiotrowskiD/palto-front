@@ -653,3 +653,7 @@ nav svg.logo {
         width: 169px;
     }
 }
+
+nav svg path {
+    transition: 0.3s;
+}
