@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu.jsx";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
@@ -24,7 +25,20 @@ export default function Navbar() {
         "flex p-[40px] w-full justify-between items-center 600px:px-[16px] 600px:py-[63px]"
       }
     >
-      <svg
+      <motion.svg
+        initial={{
+          x: "-120%",
+        }}
+        animate={{
+          x: 0,
+        }}
+        transition={{
+          delay: 3,
+          type: "spring",
+          duration: 1,
+          stiffness: 80,
+          damping: 15,
+        }}
         width="273"
         height="55"
         viewBox="0 0 273 55"
@@ -58,8 +72,23 @@ export default function Navbar() {
           d="M248.265 17.7828C261.536 17.9504 272.222 23.3886 272.965 34.6146C273.643 44.8597 264.459 53.7736 247.747 54.885C233.129 55.8571 220.877 50.7008 220.028 38.135C219.855 35.5709 220.435 33.079 221.633 30.7691C214.882 32.385 208.849 31.0104 207.56 27.3099C206.443 24.1043 209.589 19.3925 214.77 17.2897C213.357 6.3084 222.305 0 232.432 0C241.773 0 249.858 7.47662 248.265 17.7828ZM233.755 21.0285C235.645 21.21 237.381 19.2667 237.633 16.6878C237.885 14.109 236.556 11.8712 234.666 11.6897C232.775 11.5081 231.039 13.4515 230.787 16.0303C230.536 18.6092 231.864 20.8469 233.755 21.0285Z"
           fill="#FEFDFB"
         />
-      </svg>
-      <div className="options-wrapper">
+      </motion.svg>
+      <motion.div
+        className="options-wrapper"
+        initial={{
+          x: "120%",
+        }}
+        animate={{
+          x: 0,
+        }}
+        transition={{
+          delay: 3,
+          type: "spring",
+          duration: 1,
+          stiffness: 80,
+          damping: 15,
+        }}
+      >
         <a href="" className="single-option">
           About
         </a>
@@ -69,7 +98,7 @@ export default function Navbar() {
         <a href="" className="single-option">
           Paperwork
         </a>
-      </div>
+      </motion.div>
       <div
         className="mobile-menu-toggle hidden 996px:block cursor-pointer"
         onClick={handleMobileMenuToggle}
