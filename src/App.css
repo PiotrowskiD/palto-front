@@ -286,14 +286,10 @@ nav .options-wrapper .single-option:hover {
 
 .advisory-section .tile-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding-left: 197px;
-    padding-right: 197px;
-
-    @media (max-width: 1500px) {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
+    height: 100%;
+    width: 100%;
 
     @media (max-width: 1100px) {
         flex-direction: column;
@@ -309,10 +305,19 @@ nav .options-wrapper .single-option:hover {
     background: var(--primary-yellow);
     border-radius: 16px;
     padding: 40px;
+    margin: 0 197px;
+
+    @media (max-width: 1500px) {
+        margin: 0 40px;
+    }
 
     @media (max-width: 600px) {
         padding: 20px;
     }
+}
+
+.advisory-section .tile:nth-child(2) {
+    background: var(--primary-purple);
 }
 
 .advisory-section .tile h3 {
