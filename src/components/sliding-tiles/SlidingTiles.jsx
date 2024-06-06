@@ -1,15 +1,80 @@
-import React from "react";
-
 import Img1 from "../../assets/sliding-tiles/1.png";
 import Img2 from "../../assets/sliding-tiles/2.png";
 import Img3 from "../../assets/sliding-tiles/3.png";
 import Img4 from "../../assets/sliding-tiles/4.png";
 
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
 export default function SlidingTiles() {
+  const targetRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const descriptionCenter = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["-50%", "-50%"],
+  );
+  const descriptionScale = useTransform(scrollYProgress, [0.4, 0.5], [1, 0.8]);
+  const descriptionOpacity = useTransform(scrollYProgress, [0.4, 0.5], [1, 0]);
+
+  const tile1Slide = useTransform(
+    scrollYProgress,
+    [0.2, 0.5],
+    ["100vw", "0vw"],
+  );
+
+  const tile2Slide = useTransform(
+    scrollYProgress,
+    [0.24, 0.5],
+    ["95vw", "0vw"],
+  );
+
+  const tile3Slide = useTransform(
+    scrollYProgress,
+    [0.28, 0.5],
+    ["90vw", "0vw"],
+  );
+
+  const tile4Slide = useTransform(
+    scrollYProgress,
+    [0.32, 0.5],
+    ["85vw", "0vw"],
+  );
+
   return (
-    <section className="sliding-tiles px-[40px] h-[100vh] flex items-center justify-between 1280px:h-auto 1280px:py-[187.5px] 1280px:justify-center 600px:py-[60px] 600px:px-[16px]">
+    <section
+      className="sliding-tiles relative px-[40px] h-[100vh] flex items-center justify-between 1280px:h-auto 1280px:py-[187.5px] 1280px:justify-center 600px:py-[60px] 600px:px-[16px]"
+      ref={targetRef}
+    >
+      <motion.div
+        className="description-wrapper absolute z-[-1] max-w-[586px] top-[50%] left-[197px] translate-y-[-50%]"
+        style={{
+          scale: descriptionScale,
+          opacity: descriptionOpacity,
+          y: descriptionCenter,
+        }}
+      >
+        <h2 className={"uppercase text-[80px] leading-[80px] font-[800]"}>
+          AI Engineer outstaffing
+        </h2>
+        <p className={"mt-[32px] font-[500] text-[24px] leading-[31.2px]"}>
+          We've been doing AI since before the wheel was invented. From now on,
+          your projects will be under the care of experts who know this field
+          like the back of their hands.
+        </p>
+      </motion.div>
       <div className="tiles-wrapper grid grid-cols-4 gap-[40px] justify-between 1280px:grid-cols-2 600px:grid-cols-1">
-        <div className="tile">
+        <motion.div
+          className="tile"
+          style={{
+            x: tile1Slide,
+          }}
+        >
           <img src={Img1} alt="" />
           <h3>Work wisely to earn more</h3>
           <p>
@@ -19,8 +84,13 @@ export default function SlidingTiles() {
             for any time you need without the risk of laying off if the project
             ends.
           </p>
-        </div>
-        <div className="tile">
+        </motion.div>
+        <motion.div
+          className="tile"
+          style={{
+            x: tile2Slide,
+          }}
+        >
           <img src={Img2} alt="" />
           <h3>Rent-a-dev</h3>
           <p>
@@ -29,8 +99,13 @@ export default function SlidingTiles() {
             who will handle the AI area for you, while you can deal with other
             things. No onboarding, no training, or ongoing developments.
           </p>
-        </div>
-        <div className="tile">
+        </motion.div>
+        <motion.div
+          className="tile"
+          style={{
+            x: tile3Slide,
+          }}
+        >
           <img src={Img3} alt="" />
           <h3>Scale up</h3>
           <p>
@@ -38,8 +113,13 @@ export default function SlidingTiles() {
             work done. While your support does 80% of the work, you focus on the
             most important 20% unleashing your full potential.
           </p>
-        </div>
-        <div className="tile">
+        </motion.div>
+        <motion.div
+          className="tile"
+          style={{
+            x: tile4Slide,
+          }}
+        >
           <img src={Img4} alt="" />
           <h3>Save money</h3>
           <p>
@@ -47,7 +127,7 @@ export default function SlidingTiles() {
             not the expenses associated with employee recruitment and
             management.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
