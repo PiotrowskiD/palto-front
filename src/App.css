@@ -568,7 +568,7 @@ nav .options-wrapper .single-option:hover {
     user-select: none;
 }
 
-footer {
+footer .top {
     background-color: var(--primary-black);
     padding: 69px 40px;
     color: var(--primary-yellow);
@@ -585,6 +585,17 @@ footer {
     @media (max-width: 600px) {
         padding: 60px 16px;
     }
+}
+
+footer .bottom {
+    color: var(--primary-purple);
+    background-color: var(--primary-black);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--primary-purple);
+    font-size: 14px;
 }
 
 footer .left {
