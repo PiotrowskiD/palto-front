@@ -56,18 +56,8 @@ export default function About() {
   const tile2Y = useTransform(tile2Progress, [0, 0.5], ["100%", "0%"]);
   const tile2Opacity = useTransform(tile2Progress, [0, 0.4], [0.7, 1]);
 
-  const { scrollYProgress: tile3Progress } = useScroll({
-    target: refTile3,
-    offset: ["start end", "end start"],
-  });
-
   const tile3Y = useTransform(tile1Progress, [0, 0.7], ["30%", "0%"]);
   const tile3Opacity = useTransform(tile1Progress, [0, 0.3], [0, 1]);
-
-  const { scrollYProgress: tile4Progress } = useScroll({
-    target: refTile4,
-    offset: ["start end", "end start"],
-  });
 
   const tile4Y = useTransform(tile2Progress, [0, 0.7], ["80%", "0%"]);
   const tile4Opacity = useTransform(tile2Progress, [0, 0.4], [0.7, 1]);
