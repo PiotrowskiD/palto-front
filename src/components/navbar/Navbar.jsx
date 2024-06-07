@@ -96,7 +96,6 @@ export default function Navbar() {
         />
       </motion.svg>
       <motion.div
-        className={`options-wrapper ${isLanguageDropdownToggled ? "hovered" : ""}`}
         initial={{
           x: "120%",
         }}
@@ -112,49 +111,53 @@ export default function Navbar() {
         }}
       >
         <div
-          className="dropdown-toggler relative flex items-center gap-[12px] cursor-pointer mr-[12px]"
-          onClick={handleLanguageDropdownToggle}
+          className={`options-wrapper ${isLanguageDropdownToggled ? "hovered" : ""}`}
         >
-          <p className={"font-[500] text-[18px]"}>EN</p>
-          <svg
-            width="16"
-            height="11"
-            viewBox="0 0 16 11"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className={`${isLanguageDropdownToggled ? "active" : ""}`}
-          >
-            <path
-              d="M7.99988 6.71622L14.1332 0.5L15.9999 2.39189L7.99988 10.5L-0.000122153 2.39189L1.86654 0.499999L7.99988 6.71622Z"
-              fill="#131313"
-            />
-          </svg>
           <div
-            className={`language-dropdown ${isLanguageDropdownToggled ? "" : "active"} cursor-auto bg-[#FEFDFB] fixed left-[20px] top-[60px] w-[100px] rounded-[16px] p-[20px]`}
+            className="dropdown-toggler relative flex items-center gap-[12px] cursor-pointer mr-[12px]"
+            onClick={handleLanguageDropdownToggle}
           >
-            <ul className={"flex flex-col gap-[8px]"}>
-              <li className={"active"}>EN</li>
-              <li>PL</li>
-            </ul>
+            <p className={"font-[500] text-[18px]"}>EN</p>
+            <svg
+              width="16"
+              height="11"
+              viewBox="0 0 16 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className={`${isLanguageDropdownToggled ? "active" : ""}`}
+            >
+              <path
+                d="M7.99988 6.71622L14.1332 0.5L15.9999 2.39189L7.99988 10.5L-0.000122153 2.39189L1.86654 0.499999L7.99988 6.71622Z"
+                fill="#131313"
+              />
+            </svg>
+            <div
+              className={`language-dropdown ${isLanguageDropdownToggled ? "" : "active"} cursor-auto bg-[#FEFDFB] fixed left-[20px] top-[60px] w-[100px] rounded-[16px] p-[20px]`}
+            >
+              <ul className={"flex flex-col gap-[8px]"}>
+                <li className={"active"}>EN</li>
+                <li>PL</li>
+              </ul>
+            </div>
           </div>
+          <a href="" className="single-option">
+            About
+          </a>
+          <a href="" className="single-option">
+            Rent-a-dev
+          </a>
+          <a href="" className="single-option">
+            Paperwork
+          </a>
+          <a
+            href=""
+            className={
+              "bg-[#E9EB76] px-[20px] py-[8.5px] rounded-[200px] contact-btn"
+            }
+          >
+            Contact us
+          </a>
         </div>
-        <a href="" className="single-option">
-          About
-        </a>
-        <a href="" className="single-option">
-          Rent-a-dev
-        </a>
-        <a href="" className="single-option">
-          Paperwork
-        </a>
-        <a
-          href=""
-          className={
-            "bg-[#E9EB76] px-[20px] py-[8.5px] rounded-[200px] contact-btn"
-          }
-        >
-          Contact us
-        </a>
       </motion.div>
       <div
         className="mobile-menu-toggle hidden 996px:block cursor-pointer"
