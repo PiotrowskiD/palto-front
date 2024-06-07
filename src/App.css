@@ -68,10 +68,9 @@ nav {
 nav .options-wrapper {
     background-color: var(--primary-white);
     align-self: start;
-    padding:  6px  32px;
+    padding:  6px  16px 6px 32px;
     border-radius: 108px;
     display: flex;
-    gap: 16px;
     font-size: 18px;
     font-weight: 500;
     height: 52px;
@@ -95,6 +94,9 @@ nav .options-wrapper .contact-btn {
     padding: 0;
     white-space: nowrap;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Animation keyframes */
@@ -161,6 +163,11 @@ nav .options-wrapper .contact-btn:hover {
 
 nav .options-wrapper .single-option {
     transition: 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+nav .options-wrapper a:not(:last-child) {
+    margin-right: 16px;
 }
 
 nav .options-wrapper .single-option:hover {
