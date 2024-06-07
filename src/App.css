@@ -12,6 +12,11 @@ html {
     overflow-x: hidden;
 }
 
+* {
+    font-family: "futura-pt", sans-serif;
+    font-style: normal;
+}
+
 body {
     color: var(--primary-black);
     background-color: var(--primary-white);
