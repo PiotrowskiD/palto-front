@@ -17,6 +17,11 @@ body {
     background-color: var(--primary-white);
 }
 
+.parallax-content {
+    background-color: var(--primary-white);
+    margin-top: 100vh;
+}
+
 .heroarea-wrapper {
     height: 100vh;
     background-image: url("/hero/hero-background.webp");

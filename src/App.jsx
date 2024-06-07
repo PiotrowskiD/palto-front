@@ -30,16 +30,18 @@ function App() {
     <>
       <Navbar />
       <Heroarea />
-      <About />
-      <LifePackage />
-      <SlidingTiles />
-      <Help />
-      <Paperwork />
-      <Advisory />
-      <Consulting />
-      <Struggling />
-      <Contact />
-      <Footer />
+      <div className="parallax-content">
+        <About />
+        <LifePackage />
+        <SlidingTiles />
+        <Help />
+        <Paperwork />
+        <Advisory />
+        <Consulting />
+        <Struggling />
+        <Contact />
+        <Footer />
+      </div>
     </>
   );
 }

@@ -18,10 +18,10 @@ export default function Navbar() {
     };
 
     const handleScroll = () => {
-      const heroSection = document.getElementById("heroarea");
+      const heroSection = document.getElementById("about-section");
       if (heroSection) {
         const rect = heroSection.getBoundingClientRect();
-        const isOut = rect.bottom < 95;
+        const isOut = rect.top <= 95;
         setIsScrolledOut(isOut);
       }
     };

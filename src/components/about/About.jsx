@@ -63,8 +63,8 @@ export default function About() {
   const tile4Opacity = useTransform(tile2Progress, [0, 0.4], [0.7, 1]);
 
   return (
-    <section className={"about-section"}>
-      <div className="header-wrapper flex flex-col items-center gap-[40px] mt-[120px] 600px:gap-[16px] 600px:mt-[60px] 600px:px-[16px]">
+    <section className={"about-section"} id={"about-section"}>
+      <div className="header-wrapper flex flex-col items-center gap-[40px] pt-[120px] 600px:gap-[16px] 600px:pt-[60px] 600px:px-[16px]">
         <motion.h1
           className="font-[800] text-[80px] uppercase leading-[80px] text-center 996px:text-[60px] 996px:leading-[60px] 600px:text-[36px] 600px:leading-[34.2px]"
           ref={targetRef}
