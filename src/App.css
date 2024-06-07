@@ -92,6 +92,14 @@ nav .options-wrapper .single-option:hover {
     rotate: 180deg;
 }
 
+.mobile-dropdown-toggler svg {
+    transition: 0.3s;
+}
+
+.mobile-dropdown-toggler svg.active {
+    rotate: 180deg;
+}
+
 .language-dropdown {
     opacity: 1;
     transition: 0.5s;
@@ -104,6 +112,7 @@ nav .options-wrapper .single-option:hover {
 
 .language-dropdown ul li {
     align-self: start;
+    cursor: pointer;
 }
 
 .language-dropdown ul li.active {

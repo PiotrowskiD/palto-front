@@ -132,7 +132,7 @@ export default function Navbar() {
             />
           </svg>
           <div
-            className={`language-dropdown ${isLanguageDropdownToggled ? "" : "active"} bg-[#FEFDFB] fixed left-[20px] top-[60px] w-[100px] rounded-[16px] p-[20px]`}
+            className={`language-dropdown ${isLanguageDropdownToggled ? "" : "active"} cursor-auto bg-[#FEFDFB] fixed left-[20px] top-[60px] w-[100px] rounded-[16px] p-[20px]`}
           >
             <ul className={"flex flex-col gap-[8px]"}>
               <li className={"active"}>EN</li>
@@ -170,6 +170,8 @@ export default function Navbar() {
       <MobileMenu
         isMobileMenuToggled={isMobileMenuToggled}
         handleMobileMenuToggle={handleMobileMenuToggle}
+        isLanguageDropdownToggled={isLanguageDropdownToggled}
+        handleLanguageDropdownToggle={handleLanguageDropdownToggle}
       />
     </nav>
   );

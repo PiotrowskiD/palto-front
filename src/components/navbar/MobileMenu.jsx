@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-
 export default function MobileMenu({
   isMobileMenuToggled,
   handleMobileMenuToggle,
+  isLanguageDropdownToggled,
+  handleLanguageDropdownToggle,
 }) {
   return (
     <>
@@ -39,6 +39,33 @@ export default function MobileMenu({
           <a href="" className="single-option">
             Paperwork
           </a>
+          <div
+            className="mobile-dropdown-toggler flex justify-end items-center gap-[12px] cursor-pointer"
+            onClick={handleLanguageDropdownToggle}
+          >
+            <p className={"font-[500] text-[24px]"}>EN</p>
+            <svg
+              width="16"
+              height="11"
+              viewBox="0 0 16 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className={`${isLanguageDropdownToggled ? "active" : ""}`}
+            >
+              <path
+                d="M7.99988 6.71622L14.1332 0.5L15.9999 2.39189L7.99988 10.5L-0.000122153 2.39189L1.86654 0.499999L7.99988 6.71622Z"
+                fill="#131313"
+              />
+            </svg>
+          </div>
+          <div
+            className={`language-dropdown ${isLanguageDropdownToggled ? "" : "active"} flex justify-end`}
+          >
+            <ul className={"flex flex-col gap-[8px]"}>
+              <li className={"active"}>EN</li>
+              <li>PL</li>
+            </ul>
+          </div>
         </div>
         <button className="btn-primary mt-[93px]">Contact us</button>
       </div>
