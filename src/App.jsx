@@ -12,7 +12,20 @@ import Struggling from "./components/struggling/Struggling.jsx";
 import Contact from "./components/contact/Contact.jsx";
 import Footer from "./components/footer/Footer.jsx";
 
+import Lenis from "lenis";
+import { useEffect } from "react";
+
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
     <>
       <Navbar />
