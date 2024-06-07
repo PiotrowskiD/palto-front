@@ -13,15 +13,15 @@ export default function Advisory() {
   const imageSlide = useTransform(scrollYProgress, [0, 0.2], ["100%", "0%"]);
 
   // Animations for the first tile
-  const fadeOutFirstTile = useTransform(scrollYProgress, [0.3, 0.5], [1, 0]);
-  const moveUpFirstTile = useTransform(scrollYProgress, [0.3, 0.5], [0, -300]);
+  const fadeOutFirstTile = useTransform(scrollYProgress, [0.35, 0.6], [1, 0]);
+  const moveUpFirstTile = useTransform(scrollYProgress, [0.35, 0.6], [0, -320]);
 
   // Animations for the second tile
-  const fadeInSecondTile = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
-  const moveUpSecondTile = useTransform(scrollYProgress, [0.4, 0.6], [300, 0]);
+  const fadeInSecondTile = useTransform(scrollYProgress, [0.5, 0.65], [0, 1]);
+  const moveUpSecondTile = useTransform(scrollYProgress, [0.5, 0.65], [320, 0]);
 
   return (
-    <div className="relative h-[400vh]" ref={targetRef}>
+    <div className="relative h-[300vh]" ref={targetRef}>
       <div className="sticky top-0 h-screen flex justify-center items-center">
         <section className="advisory-section h-[100vh] flex justify-between items-center 1100px:h-auto 1100px:flex-col-reverse 1100px:pb-[60px]">
           <div className="tile-wrapper 1100px:mt-[60px] relative flex flex-col items-center">

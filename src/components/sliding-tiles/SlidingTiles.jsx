@@ -51,7 +51,7 @@ export default function SlidingTiles() {
       <div className="sticky top-0 h-screen">
         <section className="sliding-tiles relative px-[40px] h-[100vh] flex items-center justify-between 1280px:h-auto 1280px:py-[187.5px] 1280px:justify-center 600px:py-[60px] 600px:px-[16px]">
           <motion.div
-            className="description-wrapper absolute z-[-1] max-w-[586px] top-[50%] left-[197px] 1500px:left-[40px] translate-y-[-50%]"
+            className="description-wrapper absolute z-[-1] max-w-[586px] top-[50%] left-[197px] 1800px:left-[40px] translate-y-[-50%]"
             style={{
               scale: descriptionScale,
               opacity: descriptionOpacity,
