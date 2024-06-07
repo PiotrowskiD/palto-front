@@ -4,11 +4,11 @@ export default function Heroarea() {
   return (
     <div
       className={
-        "heroarea-wrapper flex items-end fixed top-[0] left-[0] z-[-1]"
+        "heroarea-wrapper flex w-[100%] items-end fixed top-[0] left-[0] z-[-1]"
       }
       id={"heroarea"}
     >
-      <div className="text flex flex-col justify-center items-center mb-[80px] 996px:px-[16px]">
+      <div className="text flex w-[100%] flex-col justify-center items-center mb-[80px] 996px:px-[16px]">
         <motion.h1
           className={
             "font-[800] text-[100px] text-center leading-[95px] tracking-[-3px] uppercase text-[#FEFDFB] 996px:text-[60px] 996px:leading-[60px] 600px:text-[36px] 600px:leading-[36px]"
@@ -21,7 +21,8 @@ export default function Heroarea() {
             ease: [0.645, 0.045, 0.355, 1],
           }}
         >
-          We make AI freelancing easy and stress-free.
+          We make AI freelancing <br className={"600px:hidden"} />
+          easy and stress-free.
         </motion.h1>
         <motion.p
           className={
