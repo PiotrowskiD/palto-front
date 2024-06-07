@@ -69,6 +69,7 @@ nav .options-wrapper {
     gap: 16px;
     font-size: 18px;
     font-weight: 500;
+    height: 52px;
 
     @media (max-width: 996px) {
         display: none;
@@ -80,6 +81,32 @@ nav .options-wrapper .single-option {
 }
 
 nav .options-wrapper .single-option:hover {
+    border-bottom: 2px solid var(--primary-black);
+}
+
+.dropdown-toggler svg {
+    transition: 0.3s;
+}
+
+.dropdown-toggler svg.active {
+    rotate: 180deg;
+}
+
+.language-dropdown {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.language-dropdown.active {
+  opacity: 0;
+    pointer-events: none;
+}
+
+.language-dropdown ul li {
+    align-self: start;
+}
+
+.language-dropdown ul li.active {
     border-bottom: 2px solid var(--primary-black);
 }
 

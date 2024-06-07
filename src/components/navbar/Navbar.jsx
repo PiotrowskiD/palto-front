@@ -5,6 +5,12 @@ import { motion } from "framer-motion";
 export default function Navbar() {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const [isScrolledOut, setIsScrolledOut] = useState(false);
+  const [isLanguageDropdownToggled, setIsLanguageDropdownToggled] =
+    useState(false);
+
+  const handleLanguageDropdownToggle = () => {
+    setIsLanguageDropdownToggled(!isLanguageDropdownToggled);
+  };
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuToggled(!isMobileMenuToggled);
@@ -34,6 +40,8 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  console.log(isLanguageDropdownToggled);
 
   return (
     <nav
@@ -105,6 +113,33 @@ export default function Navbar() {
           damping: 15,
         }}
       >
+        <div
+          className="dropdown-toggler relative flex items-center gap-[12px] cursor-pointer mr-[12px]"
+          onClick={handleLanguageDropdownToggle}
+        >
+          <p className={"font-[500] text-[18px]"}>EN</p>
+          <svg
+            width="16"
+            height="11"
+            viewBox="0 0 16 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={`${isLanguageDropdownToggled ? "active" : ""}`}
+          >
+            <path
+              d="M7.99988 6.71622L14.1332 0.5L15.9999 2.39189L7.99988 10.5L-0.000122153 2.39189L1.86654 0.499999L7.99988 6.71622Z"
+              fill="#131313"
+            />
+          </svg>
+          <div
+            className={`language-dropdown ${isLanguageDropdownToggled ? "" : "active"} bg-[#FEFDFB] fixed left-[20px] top-[60px] w-[100px] rounded-[16px] p-[20px]`}
+          >
+            <ul className={"flex flex-col gap-[8px]"}>
+              <li className={"active"}>EN</li>
+              <li>PL</li>
+            </ul>
+          </div>
+        </div>
         <a href="" className="single-option">
           About
         </a>
