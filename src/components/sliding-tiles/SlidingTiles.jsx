@@ -20,29 +20,29 @@ export default function SlidingTiles() {
     ["-50%", "-50%"],
   );
   const descriptionScale = useTransform(scrollYProgress, [0.4, 0.5], [1, 0.8]);
-  const descriptionOpacity = useTransform(scrollYProgress, [0.4, 0.5], [1, 0]);
+  const descriptionOpacity = useTransform(scrollYProgress, [0.3, 0.35], [1, 0]);
 
   const tile1Slide = useTransform(
     scrollYProgress,
-    [0.2, 0.5],
+    [0.3, 0.6],
     ["100vw", "0vw"],
   );
 
   const tile2Slide = useTransform(
     scrollYProgress,
-    [0.24, 0.53],
+    [0.34, 0.63],
     ["100vw", "0vw"],
   );
 
   const tile3Slide = useTransform(
     scrollYProgress,
-    [0.28, 0.56],
+    [0.38, 0.66],
     ["100vw", "0vw"],
   );
 
   const tile4Slide = useTransform(
     scrollYProgress,
-    [0.32, 0.59],
+    [0.42, 0.69],
     ["100vw", "0vw"],
   );
 
@@ -51,7 +51,7 @@ export default function SlidingTiles() {
       <div className="sticky top-0 h-screen">
         <section className="sliding-tiles relative px-[40px] h-[100vh] flex items-center justify-between 1280px:h-auto 1280px:py-[187.5px] 1280px:justify-center 600px:py-[60px] 600px:px-[16px]">
           <motion.div
-            className="description-wrapper absolute z-[-1] max-w-[586px] top-[50%] left-[197px] translate-y-[-50%]"
+            className="description-wrapper absolute z-[-1] max-w-[586px] top-[50%] left-[197px] 1500px:left-[40px] translate-y-[-50%]"
             style={{
               scale: descriptionScale,
               opacity: descriptionOpacity,
