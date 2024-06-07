@@ -1,5 +1,6 @@
 :root {
     --primary-white: #FEFDFB;
+    --section-white: #F9F6EE;
     --primary-black: #131313;
     --primary-yellow: #E9EB76;
     --primary-green: #D5EEC8;
@@ -23,7 +24,7 @@ body {
 }
 
 .parallax-content {
-    background-color: var(--primary-white);
+    background-color: var(--section-white);
     margin-top: 100vh;
 }
 
