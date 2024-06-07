@@ -96,7 +96,7 @@ export default function Navbar() {
         />
       </motion.svg>
       <motion.div
-        className="options-wrapper"
+        className={`options-wrapper ${isLanguageDropdownToggled ? "hovered" : ""}`}
         initial={{
           x: "120%",
         }}
@@ -146,6 +146,14 @@ export default function Navbar() {
         </a>
         <a href="" className="single-option">
           Paperwork
+        </a>
+        <a
+          href=""
+          className={
+            "bg-[#E9EB76] px-[20px] py-[8.5px] rounded-[200px] contact-btn"
+          }
+        >
+          Contact us
         </a>
       </motion.div>
       <div
