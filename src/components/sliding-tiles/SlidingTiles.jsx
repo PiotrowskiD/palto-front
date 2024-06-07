@@ -19,8 +19,8 @@ export default function SlidingTiles() {
     [0, 1],
     ["-50%", "-50%"],
   );
-  const descriptionScale = useTransform(scrollYProgress, [0.4, 0.5], [1, 0.8]);
-  const descriptionOpacity = useTransform(scrollYProgress, [0.3, 0.35], [1, 0]);
+  const descriptionScale = useTransform(scrollYProgress, [0.4, 0.6], [1, 0.8]);
+  const descriptionOpacity = useTransform(scrollYProgress, [0.3, 0.45], [1, 0]);
 
   const tile1Slide = useTransform(
     scrollYProgress,
