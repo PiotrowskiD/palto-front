@@ -726,7 +726,6 @@ footer .bottom {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid var(--primary-purple);
     font-size: 14px;
 }
 
