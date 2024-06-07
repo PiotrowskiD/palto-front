@@ -41,8 +41,6 @@ export default function Navbar() {
     };
   }, []);
 
-  console.log(isLanguageDropdownToggled);
-
   return (
     <nav
       className={
