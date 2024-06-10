@@ -163,18 +163,31 @@ export default function Navbar() {
         className="mobile-menu-toggle hidden 996px:block cursor-pointer"
         onClick={handleMobileMenuToggle}
       >
-        <svg
+        <motion.svg
           width="30"
           height="20"
           viewBox="0 0 30 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          initial={{
+            x: "500%",
+          }}
+          animate={{
+            x: 0,
+          }}
+          transition={{
+            delay: 3,
+            type: "spring",
+            duration: 1,
+            stiffness: 80,
+            damping: 15,
+          }}
         >
           <path
             d="M0 20V16.6667H30V20H0ZM0 11.6667V8.33333H30V11.6667H0ZM0 3.33333V0H30V3.33333H0Z"
-            fill={isScrolledOut ? "#000000" : "#FEFDFB"}
+            fill={isScrolledOut ? "#131313" : "#FEFDFB"}
           />
-        </svg>
+        </motion.svg>
       </div>
       <MobileMenu
         isMobileMenuToggled={isMobileMenuToggled}
