@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { scrollToSection } from "../../utils/scrollToSection.js";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function Heroarea() {
   const handleScroll = (e, sectionId) => {
     e.preventDefault();
     scrollToSection(sectionId);
   };
+
+  const { languageData } = useLanguage();
 
   return (
     <div
@@ -26,10 +29,8 @@ export default function Heroarea() {
             duration: 0.5,
             ease: [0.645, 0.045, 0.355, 1],
           }}
-        >
-          We make AI freelancing <br className={"600px:hidden"} />
-          easy and stress-free.
-        </motion.h1>
+          dangerouslySetInnerHTML={{ __html: languageData.hero.h1 }}
+        ></motion.h1>
         <motion.p
           className={
             "font-[500] text-[32px] text-[#FEFDFB] mt-[16px] 996px:text-center 600px:text-[24px] 600px:leading-[31.2px]"
@@ -42,7 +43,7 @@ export default function Heroarea() {
             ease: [0.645, 0.045, 0.355, 1],
           }}
         >
-          Focus on getting the work done and start living a balanced life.
+          {languageData.hero.p}
         </motion.p>
         <motion.button
           className="btn-primary mt-[40px] 600px:mt-[48px]"
@@ -55,7 +56,7 @@ export default function Heroarea() {
           }}
           onClick={(e) => handleScroll(e, "contact-section")}
         >
-          Start living!
+          {languageData.hero.button}
         </motion.button>
       </div>
     </div>

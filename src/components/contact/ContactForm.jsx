@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { submitFormData } from "../../utils/action.submitFormData.js";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function ContactForm() {
+  const { languageData } = useLanguage();
+
   const [isConsentChecked, setIsConsentChecked] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -51,26 +54,26 @@ export default function ContactForm() {
 
     // Validation checks
     if (formData.name.trim() === "") {
-      newErrors.name = "Name is required";
+      newErrors.name = languageData.contact.errors.nameRequired;
       formIsValid = false;
     }
     if (formData.email.trim() === "") {
-      newErrors.email = "Email is required";
+      newErrors.email = languageData.contact.errors.emailRequired;
       formIsValid = false;
     } else if (!isValidEmail(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
+      newErrors.email = languageData.contact.errors.invalidEmail;
       formIsValid = false;
     }
     if (formData.telephone.trim().length < 9) {
-      newErrors.telephone = "Telephone number must be 9 digits or longer";
+      newErrors.telephone = languageData.contact.errors.telephoneLength;
       formIsValid = false;
     }
     if (formData.message.trim() === "") {
-      newErrors.message = "Message cannot be empty";
+      newErrors.message = languageData.contact.errors.messageRequired;
       formIsValid = false;
     }
     if (!isConsentChecked) {
-      newErrors.consent = "Please agree to the Privacy Policy";
+      newErrors.consent = languageData.contact.errors.consentRequired;
       formIsValid = false;
     }
     // Add more validation checks for other fields if needed
@@ -110,7 +113,7 @@ export default function ContactForm() {
         <input
           type="text"
           name="name"
-          placeholder={"Name"}
+          placeholder={`${languageData.contact.name}`}
           value={formData.name}
           onChange={handleFormChange}
           className={"w-[100%]"}
@@ -121,7 +124,7 @@ export default function ContactForm() {
         <input
           type="text"
           name="email"
-          placeholder={"Email"}
+          placeholder={`${languageData.contact.email}`}
           value={formData.email}
           onChange={handleFormChange}
           className={"w-[100%]"}
@@ -134,7 +137,7 @@ export default function ContactForm() {
         <input
           type="text"
           name="telephone"
-          placeholder={"Telephone"}
+          placeholder={`${languageData.contact.telephone}`}
           value={formData.telephone}
           onChange={handleFormChange}
           className={"w-[100%]"}
@@ -147,7 +150,7 @@ export default function ContactForm() {
         <input
           type="text"
           name="message"
-          placeholder={"Message"}
+          placeholder={`${languageData.contact.message}`}
           value={formData.message}
           onChange={handleFormChange}
           className={"w-[100%]"}
@@ -167,7 +170,7 @@ export default function ContactForm() {
             <span className="checkmark"></span>
           </label>
           <p onClick={() => setIsConsentChecked(!isConsentChecked)}>
-            I agree to the Privacy Policy.
+            {languageData.contact.consent}
           </p>
         </div>
         <p className={`error ${errors.consent ? "active" : ""}`}>
@@ -178,7 +181,7 @@ export default function ContactForm() {
         className="btn-primary self-start mt-[40px]"
         onClick={handleSubmit}
       >
-        Send message
+        {languageData.contact.button}
       </button>
     </div>
   );

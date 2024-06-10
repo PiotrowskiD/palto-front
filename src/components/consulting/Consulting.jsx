@@ -1,20 +1,16 @@
-import React from "react";
-
 import ConsultingImg from "../../assets/consulting/consulting.webp";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function Consulting() {
+  const { languageData } = useLanguage();
+
   return (
     <section className={"consulting-section"}>
       <img src={ConsultingImg} alt="" />
       <div className="text-wrapper">
         <div className="text">
-          <h1>CONSULTING ON DEMAND</h1>
-          <p>
-            Regardless of whether you are new to this business or have been a
-            freelancer for some time, you can benefit from hiring our
-            freelancing consultants. They will advise you on all
-            business-related aspects of the game:
-          </p>
+          <h1>{languageData.consulting.title}</h1>
+          <p>{languageData.consulting.description}</p>
           <ul>
             <li>
               <svg
@@ -29,7 +25,7 @@ export default function Consulting() {
                   fill="#131313"
                 />
               </svg>
-              How to advertise your services to find a new client.
+              {languageData.consulting.list.first}
             </li>
             <li>
               <svg
@@ -44,7 +40,7 @@ export default function Consulting() {
                   fill="#131313"
                 />
               </svg>
-              How to prepare a perfect sales offer that won’t be refused.
+              {languageData.consulting.list.second}
             </li>
             <li>
               <svg
@@ -59,7 +55,7 @@ export default function Consulting() {
                   fill="#131313"
                 />
               </svg>
-              How to negotiate the contract to secure your business.
+              {languageData.consulting.list.third}
             </li>
           </ul>
         </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu.jsx";
 import { motion } from "framer-motion";
 import { scrollToSection } from "../../utils/scrollToSection.js";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function Navbar() {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
@@ -46,6 +47,13 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const { languageData, switchLanguage, currentLanguage } = useLanguage();
+
+  const changeLanguage = (e) => {
+    const newLanguage = e.currentTarget.getAttribute("value");
+    switchLanguage(newLanguage);
+  };
 
   return (
     <nav
@@ -123,7 +131,9 @@ export default function Navbar() {
             className="dropdown-toggler relative flex items-center gap-[12px] cursor-pointer mr-[12px]"
             onClick={handleLanguageDropdownToggle}
           >
-            <p className={"font-[500] text-[18px]"}>EN</p>
+            <p className={"font-[500] text-[18px] uppercase"}>
+              {currentLanguage}
+            </p>
             <svg
               width="16"
               height="11"
@@ -141,8 +151,16 @@ export default function Navbar() {
               className={`language-dropdown ${isLanguageDropdownToggled ? "" : "active"} cursor-auto bg-[#FEFDFB] fixed left-[20px] top-[60px] w-[100px] rounded-[16px] p-[20px]`}
             >
               <ul className={"flex flex-col gap-[8px]"}>
-                <li className={"active"}>EN</li>
-                <li>PL</li>
+                <li
+                  className={"active"}
+                  value={"en"}
+                  onClick={(e) => changeLanguage(e)}
+                >
+                  EN
+                </li>
+                <li value={"pl"} onClick={(e) => changeLanguage(e)}>
+                  PL
+                </li>
               </ul>
             </div>
           </div>
@@ -150,19 +168,19 @@ export default function Navbar() {
             className="single-option"
             onClick={(e) => handleScroll(e, "about-section")}
           >
-            About
+            {languageData.navbar.about}
           </a>
           <a
             className="single-option"
             onClick={(e) => handleScroll(e, "sliding-section")}
           >
-            Rent-a-dev
+            {languageData.navbar.rentDev}
           </a>
           <a
             className="single-option"
             onClick={(e) => handleScroll(e, "paperwork-section")}
           >
-            Paperwork
+            {languageData.navbar.paperwork}
           </a>
           <a
             className={
@@ -170,7 +188,7 @@ export default function Navbar() {
             }
             onClick={(e) => handleScroll(e, "contact-section")}
           >
-            Contact us
+            {languageData.navbar.contact}
           </a>
         </div>
       </motion.div>

@@ -5,6 +5,7 @@ import Img4 from "../../assets/sliding-tiles/4.png";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function SlidingTiles() {
   const targetRef = useRef(null);
@@ -164,6 +165,8 @@ export default function SlidingTiles() {
     ["0vh", "-100vh"],
   );
 
+  const { languageData } = useLanguage();
+
   return (
     <div
       className="relative h-[300vh] 1280px:h-[600vh] 600px:h-[500vh]"
@@ -181,12 +184,10 @@ export default function SlidingTiles() {
             }}
           >
             <h2 className={"uppercase text-[80px] leading-[80px] font-[800]"}>
-              AI Engineer outstaffing
+              {languageData.outstaffing.title}
             </h2>
             <p className={"mt-[32px] font-[500] text-[24px] leading-[31.2px]"}>
-              We've been doing AI since before the wheel was invented. From now
-              on, your projects will be under the care of experts who know this
-              field like the back of their hands.
+              {languageData.outstaffing.description}
             </p>
           </motion.div>
           <div className="tiles-wrapper grid grid-cols-4 gap-[40px] justify-between 1280px:grid-cols-2 600px:grid-cols-1">
@@ -197,14 +198,8 @@ export default function SlidingTiles() {
               }}
             >
               <img src={Img1} alt="" />
-              <h3>Work wisely to earn more</h3>
-              <p>
-                Save time and energy and pass all the hassle work to a hired
-                specialist so you can focus on what matters. Palto will deliver
-                you proven support experienced in working with freelancers. Hire
-                them for any time you need without the risk of laying off if the
-                project ends.
-              </p>
+              <h3>{languageData.outstaffing.tile1.title}</h3>
+              <p>{languageData.outstaffing.tile1.description}</p>
             </motion.div>
             <motion.div
               className="tile"
@@ -213,14 +208,8 @@ export default function SlidingTiles() {
               }}
             >
               <img src={Img2} alt="" />
-              <h3>Rent-a-dev</h3>
-              <p>
-                The additional hands that work for you. Gain immediate access to
-                proficient assistance, preventing any downtime. Rent a
-                specialist who will handle the AI area for you, while you can
-                deal with other things. No onboarding, no training, or ongoing
-                developments.
-              </p>
+              <h3>{languageData.outstaffing.tile2.title}</h3>
+              <p>{languageData.outstaffing.tile2.description}</p>
             </motion.div>
             <motion.div
               className="tile"
@@ -229,12 +218,8 @@ export default function SlidingTiles() {
               }}
             >
               <img src={Img3} alt="" />
-              <h3>Scale up</h3>
-              <p>
-                You can take on more projects without the fear of not getting
-                the work done. While your support does 80% of the work, you
-                focus on the most important 20% unleashing your full potential.
-              </p>
+              <h3>{languageData.outstaffing.tile3.title}</h3>
+              <p>{languageData.outstaffing.tile3.description}</p>
             </motion.div>
             <motion.div
               className="tile"
@@ -243,12 +228,8 @@ export default function SlidingTiles() {
               }}
             >
               <img src={Img4} alt="" />
-              <h3>Save money</h3>
-              <p>
-                Keep your project budget in line by only paying for the work
-                done, not the expenses associated with employee recruitment and
-                management.
-              </p>
+              <h3>{languageData.outstaffing.tile4.title}</h3>
+              <p>{languageData.outstaffing.tile4.description}</p>
             </motion.div>
           </div>
         </section>
@@ -272,12 +253,10 @@ export default function SlidingTiles() {
             }
           >
             <h2 className={"uppercase text-[80px] leading-[80px] font-[800]"}>
-              AI Engineer outstaffing
+              {languageData.outstaffing.title}
             </h2>
             <p className={"mt-[32px] font-[500] text-[24px] leading-[31.2px]"}>
-              We've been doing AI since before the wheel was invented. From now
-              on, your projects will be under the care of experts who know this
-              field like the back of their hands.
+              {languageData.outstaffing.description}
             </p>
           </motion.div>
           <div className="tiles-wrapper ">
@@ -295,14 +274,8 @@ export default function SlidingTiles() {
                 }}
               >
                 <img src={Img1} alt="" />
-                <h3>Work wisely to earn more</h3>
-                <p>
-                  Save time and energy and pass all the hassle work to a hired
-                  specialist so you can focus on what matters. Palto will
-                  deliver you proven support experienced in working with
-                  freelancers. Hire them for any time you need without the risk
-                  of laying off if the project ends.
-                </p>
+                <h3>{languageData.outstaffing.tile1.title}</h3>
+                <p>{languageData.outstaffing.tile1.description}</p>
               </motion.div>
               <motion.div
                 className="tile"
@@ -312,14 +285,8 @@ export default function SlidingTiles() {
                 }}
               >
                 <img src={Img2} alt="" />
-                <h3>Rent-a-dev</h3>
-                <p>
-                  The additional hands that work for you. Gain immediate access
-                  to proficient assistance, preventing any downtime. Rent a
-                  specialist who will handle the AI area for you, while you can
-                  deal with other things. No onboarding, no training, or ongoing
-                  developments.
-                </p>
+                <h3>{languageData.outstaffing.tile2.title}</h3>
+                <p>{languageData.outstaffing.tile2.description}</p>
               </motion.div>
             </motion.div>
             <motion.div
@@ -335,13 +302,8 @@ export default function SlidingTiles() {
                 }}
               >
                 <img src={Img3} alt="" />
-                <h3>Scale up</h3>
-                <p>
-                  You can take on more projects without the fear of not getting
-                  the work done. While your support does 80% of the work, you
-                  focus on the most important 20% unleashing your full
-                  potential.
-                </p>
+                <h3>{languageData.outstaffing.tile3.title}</h3>
+                <p>{languageData.outstaffing.tile3.description}</p>
               </motion.div>
               <motion.div
                 className="tile"
@@ -350,12 +312,8 @@ export default function SlidingTiles() {
                 }}
               >
                 <img src={Img4} alt="" />
-                <h3>Save money</h3>
-                <p>
-                  Keep your project budget in line by only paying for the work
-                  done, not the expenses associated with employee recruitment
-                  and management.
-                </p>
+                <h3>{languageData.outstaffing.tile4.title}</h3>
+                <p>{languageData.outstaffing.tile4.description}</p>
               </motion.div>
             </motion.div>
           </div>
@@ -370,12 +328,10 @@ export default function SlidingTiles() {
             }}
           >
             <h2 className={"uppercase text-[36px] leading-[34.2px] font-[800]"}>
-              AI Engineer outstaffing
+              {languageData.outstaffing.title}
             </h2>
             <p className={"mt-[16px] font-[500] text-[20px] leading-[26px]"}>
-              We've been doing AI since before the wheel was invented. From now
-              on, your projects will be under the care of experts who know this
-              field like the back of their hands.
+              {languageData.outstaffing.description}
             </p>
           </motion.div>
           <div className="tiles-wrapper">
@@ -387,14 +343,8 @@ export default function SlidingTiles() {
               }}
             >
               <img src={Img1} alt="" />
-              <h3>Work wisely to earn more</h3>
-              <p>
-                Save time and energy and pass all the hassle work to a hired
-                specialist so you can focus on what matters. Palto will deliver
-                you proven support experienced in working with freelancers. Hire
-                them for any time you need without the risk of laying off if the
-                project ends.
-              </p>
+              <h3>{languageData.outstaffing.tile1.title}</h3>
+              <p>{languageData.outstaffing.tile1.description}</p>
             </motion.div>
             <motion.div
               className="tile absolute px-[16px] top-[25%]"
@@ -404,14 +354,8 @@ export default function SlidingTiles() {
               }}
             >
               <img src={Img2} alt="" />
-              <h3>Rent-a-dev</h3>
-              <p>
-                The additional hands that work for you. Gain immediate access to
-                proficient assistance, preventing any downtime. Rent a
-                specialist who will handle the AI area for you, while you can
-                deal with other things. No onboarding, no training, or ongoing
-                developments.
-              </p>
+              <h3>{languageData.outstaffing.tile2.title}</h3>
+              <p>{languageData.outstaffing.tile2.description}</p>
             </motion.div>
             <motion.div
               className="tile absolute px-[16px] top-[25%]"
@@ -421,12 +365,8 @@ export default function SlidingTiles() {
               }}
             >
               <img src={Img3} alt="" />
-              <h3>Scale up</h3>
-              <p>
-                You can take on more projects without the fear of not getting
-                the work done. While your support does 80% of the work, you
-                focus on the most important 20% unleashing your full potential.
-              </p>
+              <h3>{languageData.outstaffing.tile3.title}</h3>
+              <p>{languageData.outstaffing.tile3.description}</p>
             </motion.div>
             <motion.div
               className="tile absolute px-[16px] top-[25%]"
@@ -435,12 +375,8 @@ export default function SlidingTiles() {
               }}
             >
               <img src={Img4} alt="" />
-              <h3>Save money</h3>
-              <p>
-                Keep your project budget in line by only paying for the work
-                done, not the expenses associated with employee recruitment and
-                management.
-              </p>
+              <h3>{languageData.outstaffing.tile4.title}</h3>
+              <p>{languageData.outstaffing.tile4.description}</p>
             </motion.div>
           </div>
         </section>

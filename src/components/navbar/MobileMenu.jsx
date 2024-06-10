@@ -1,4 +1,5 @@
 import { scrollToSection } from "../../utils/scrollToSection.js";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function MobileMenu({
   isMobileMenuToggled,
@@ -14,6 +15,13 @@ export default function MobileMenu({
   const handleBoth = (e, sectionId) => {
     handleScroll(e, sectionId);
     handleMobileMenuToggle();
+  };
+
+  const { languageData, switchLanguage, currentLanguage } = useLanguage();
+
+  const changeLanguage = (e) => {
+    const newLanguage = e.currentTarget.getAttribute("value");
+    switchLanguage(newLanguage);
   };
 
   return (
@@ -46,25 +54,27 @@ export default function MobileMenu({
             className="single-option cursor-pointer"
             onClick={(e) => handleBoth(e, "about-section")}
           >
-            About
+            {languageData.navbar.about}
           </a>
           <a
             className="single-option cursor-pointer"
             onClick={(e) => handleBoth(e, "sliding-section")}
           >
-            Rent-a-dev
+            {languageData.navbar.rentDev}
           </a>
           <a
             className="single-option cursor-pointer"
             onClick={(e) => handleBoth(e, "paperwork-section")}
           >
-            Paperwork
+            {languageData.navbar.paperwork}
           </a>
           <div
             className="mobile-dropdown-toggler flex justify-end items-center gap-[12px] cursor-pointer"
             onClick={handleLanguageDropdownToggle}
           >
-            <p className={"font-[500] text-[24px]"}>EN</p>
+            <p className={"font-[500] text-[24px] uppercase"}>
+              {currentLanguage}
+            </p>
             <svg
               width="16"
               height="11"
@@ -83,8 +93,16 @@ export default function MobileMenu({
             className={`language-dropdown ${isLanguageDropdownToggled ? "" : "active"} flex justify-end`}
           >
             <ul className={"flex flex-col gap-[8px]"}>
-              <li className={"active"}>EN</li>
-              <li>PL</li>
+              <li
+                className={"active"}
+                value={"en"}
+                onClick={(e) => changeLanguage(e)}
+              >
+                EN
+              </li>
+              <li value={"pl"} onClick={(e) => changeLanguage(e)}>
+                PL
+              </li>
             </ul>
           </div>
         </div>
@@ -92,7 +110,7 @@ export default function MobileMenu({
           className="btn-primary mt-[93px]"
           onClick={(e) => handleBoth(e, "contact-section")}
         >
-          Contact us
+          {languageData.navbar.contact}
         </button>
       </div>
     </>

@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import AdvisoryImg from "../../assets/advisory/advisory.webp";
 import AdvisoryMobileImg from "../../assets/advisory/advisory-mobile.webp";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function Advisory() {
   const targetRef = useRef(null);
@@ -20,6 +21,8 @@ export default function Advisory() {
   const fadeInSecondTile = useTransform(scrollYProgress, [0.5, 0.65], [0, 1]);
   const moveUpSecondTile = useTransform(scrollYProgress, [0.5, 0.65], [320, 0]);
 
+  const { languageData } = useLanguage();
+
   return (
     <div className="relative h-[300vh]" ref={targetRef}>
       <div className="sticky top-0 h-screen flex justify-center items-center">
@@ -32,15 +35,8 @@ export default function Advisory() {
                 y: moveUpFirstTile,
               }}
             >
-              <h3>Legal advisory</h3>
-              <p>
-                Palto lawyers will handle all legal aspects of your freelancing.
-                Experienced in IT contracts, we ensure you’re fully protected
-                and understand your agreements. Our experts streamline the
-                negotiation process for efficiency. Whether you’re new or
-                seasoned, we’ll create or analyze contracts to safeguard your
-                interests.
-              </p>
+              <h3>{languageData.advisory.tile1.title}</h3>
+              <p>{languageData.advisory.tile1.description}</p>
             </motion.div>
             <motion.div
               className="tile"
@@ -49,17 +45,12 @@ export default function Advisory() {
                 y: moveUpSecondTile,
               }}
             >
-              <h3>Accounting Services</h3>
-              <p>
-                We'll handle all aspects of your accounting processes, from
-                document submission through electronic processing and approval,
-                to complete financial and tax reports. <br /> <br />
-                Palto tax advisory: we follow and analyze all the changes in tax
-                legislation and its effects in the long term. Life is more
-                beautiful when you can sleep peacefully and have a little extra
-                in your pocket. Let us help you optimize your taxes to achieve
-                just that.
-              </p>
+              <h3>{languageData.advisory.tile2.title}</h3>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: languageData.advisory.tile2.description,
+                }}
+              ></p>
             </motion.div>
           </div>
           <motion.img

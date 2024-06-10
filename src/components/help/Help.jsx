@@ -1,17 +1,12 @@
-import React from "react";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function Help() {
+  const { languageData } = useLanguage();
+
   return (
     <section className={"help-section"}>
-      <h1>
-        Palto is here to help you regain control over your work and start living
-        to the fullest.
-      </h1>
-      <p>
-        You can hire support to work less and earn just a little less, or you
-        can work as much as before but take on more projects and earn
-        significantly more. The choice is yours.
-      </p>
+      <h1>{languageData.help.title}</h1>
+      <p>{languageData.help.description}</p>
     </section>
   );
 }
