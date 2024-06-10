@@ -4,7 +4,7 @@ export default function Heroarea() {
   return (
     <div
       className={
-        "heroarea-wrapper flex w-[100%] items-end fixed top-[0] left-[0] z-[-1]"
+        "heroarea-wrapper flex max-w-[100vw] w-[100%] items-end fixed top-[0] left-[0] z-[-1]"
       }
       id={"heroarea"}
     >

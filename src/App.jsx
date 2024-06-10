@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className={"overflow-x-clip"}>
       <Navbar />
       <Heroarea />
       <div className="parallax-content">
@@ -42,7 +42,7 @@ function App() {
         <Contact />
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

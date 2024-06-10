@@ -44,7 +44,7 @@ export default function Navbar() {
   return (
     <nav
       className={
-        "flex p-[40px] w-full justify-between items-center 600px:px-[16px] 600px:py-[63px]"
+        "flex p-[40px] w-full max-w-[100vw] justify-between items-center 600px:px-[16px] 600px:py-[63px]"
       }
     >
       <motion.svg
