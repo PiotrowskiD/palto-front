@@ -1,9 +1,29 @@
+import { scrollToSection } from "../../utils/scrollToSection.js";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
+
 export default function MobileMenu({
   isMobileMenuToggled,
   handleMobileMenuToggle,
   isLanguageDropdownToggled,
   handleLanguageDropdownToggle,
 }) {
+  const handleScroll = (e, sectionId) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
+  const handleBoth = (e, sectionId) => {
+    handleScroll(e, sectionId);
+    handleMobileMenuToggle();
+  };
+
+  const { languageData, switchLanguage, currentLanguage } = useLanguage();
+
+  const changeLanguage = (e) => {
+    const newLanguage = e.currentTarget.getAttribute("value");
+    switchLanguage(newLanguage);
+  };
+
   return (
     <>
       <div
@@ -30,20 +50,31 @@ export default function MobileMenu({
           </svg>
         </div>
         <div className="mobile-options mt-[80px] font-[500] flex flex-col gap-[20px] text-[24px] text-right">
-          <a href="" className="single-option">
-            About
+          <a
+            className="single-option cursor-pointer"
+            onClick={(e) => handleBoth(e, "about-section")}
+          >
+            {languageData.navbar.about}
           </a>
-          <a href="" className="single-option">
-            Rent-a-dev
+          <a
+            className="single-option cursor-pointer"
+            onClick={(e) => handleBoth(e, "sliding-section")}
+          >
+            {languageData.navbar.rentDev}
           </a>
-          <a href="" className="single-option">
-            Paperwork
+          <a
+            className="single-option cursor-pointer"
+            onClick={(e) => handleBoth(e, "paperwork-section")}
+          >
+            {languageData.navbar.paperwork}
           </a>
           <div
             className="mobile-dropdown-toggler flex justify-end items-center gap-[12px] cursor-pointer"
             onClick={handleLanguageDropdownToggle}
           >
-            <p className={"font-[500] text-[24px]"}>EN</p>
+            <p className={"font-[500] text-[24px] uppercase"}>
+              {currentLanguage}
+            </p>
             <svg
               width="16"
               height="11"
@@ -62,12 +93,25 @@ export default function MobileMenu({
             className={`language-dropdown ${isLanguageDropdownToggled ? "" : "active"} flex justify-end`}
           >
             <ul className={"flex flex-col gap-[8px]"}>
-              <li className={"active"}>EN</li>
-              <li>PL</li>
+              <li
+                className={"active"}
+                value={"en"}
+                onClick={(e) => changeLanguage(e)}
+              >
+                EN
+              </li>
+              <li value={"pl"} onClick={(e) => changeLanguage(e)}>
+                PL
+              </li>
             </ul>
           </div>
         </div>
-        <button className="btn-primary mt-[93px]">Contact us</button>
+        <button
+          className="btn-primary mt-[93px]"
+          onClick={(e) => handleBoth(e, "contact-section")}
+        >
+          {languageData.navbar.contact}
+        </button>
       </div>
     </>
   );

@@ -1,10 +1,16 @@
 import ContactForm from "./ContactForm.jsx";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function Contact() {
+  const { languageData } = useLanguage();
+
   return (
-    <section className={"contact-section relative overflow-hidden"}>
-      <div className="left max-w-[430px] relative z-[2] 600px:max-w-[100%] 600px:w-full">
-        <h1>Let&apos;s talk.</h1>
+    <section
+      className={"contact-section relative overflow-hidden"}
+      id="contact-section"
+    >
+      <div className="left max-w-[450px] relative z-[2] 600px:max-w-[100%] 600px:w-full">
+        <h1 className={"uppercase"}>{languageData.contact.title}</h1>
         <ContactForm />
       </div>
       <div className="right max-h-[100%] absolute right-0 z-[1] 996px:top-[-10%] 600px:top-[-2%] 600px:right-[-20%]">

@@ -5,8 +5,15 @@ import Image1 from "../../assets/about/1.png";
 import Image2 from "../../assets/about/2.png";
 import Image3 from "../../assets/about/3.png";
 import Image4 from "../../assets/about/4.png";
+import { scrollToSection } from "../../utils/scrollToSection.js";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function About() {
+  const handleScroll = (e, sectionId) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
   // Title animation
 
   const targetRef = useRef(null);
@@ -62,6 +69,8 @@ export default function About() {
   const tile4Y = useTransform(tile2Progress, [0, 0.7], ["80%", "0%"]);
   const tile4Opacity = useTransform(tile2Progress, [0, 0.4], [0.7, 1]);
 
+  const { languageData } = useLanguage();
+
   return (
     <section className={"about-section"} id={"about-section"}>
       <div className="header-wrapper flex flex-col items-center gap-[40px] pt-[120px] 600px:gap-[16px] 600px:pt-[60px] 600px:px-[16px]">
@@ -69,19 +78,15 @@ export default function About() {
           className="font-[800] text-[80px] uppercase leading-[80px] text-center 996px:text-[60px] 996px:leading-[60px] 600px:text-[36px] 600px:leading-[34.2px]"
           ref={targetRef}
           style={{ y: h1Y, opacity: h1Opacity }}
-        >
-          We understand <br />
-          your dilemmas
-        </motion.h1>
+          dangerouslySetInnerHTML={{ __html: languageData.about.h1 }}
+        ></motion.h1>
         <motion.p
           className={
             "font-500 text-[32px] leading-[41.6px] text-[#343331] text-center 600px:text-[20px] 600px:leading-[26px]"
           }
           style={{ y: pY, opacity: pOpacity }}
-        >
-          A full-time job and freelancing have their <br />
-          pros but also have cons.
-        </motion.p>
+          dangerouslySetInnerHTML={{ __html: languageData.about.p }}
+        ></motion.p>
       </div>
       <div className="tiles-wrapper">
         <motion.div
@@ -93,13 +98,8 @@ export default function About() {
             <img src={Image1} alt="" />
           </div>
           <div className="text">
-            <h3>Freelance dream</h3>
-            <p>
-              In a corporation, you get paid every month, but get stuck in
-              endless and meaningless meetings. Or stay in the office after
-              hours trying to do what you were hired to do. You start dreaming
-              of going freelance.
-            </p>
+            <h3>{languageData.about.tile1.title}</h3>
+            <p>{languageData.about.tile1.description}</p>
           </div>
         </motion.div>
         <motion.div
@@ -111,12 +111,8 @@ export default function About() {
             <img src={Image2} alt="" />
           </div>
           <div className="text">
-            <h3>Freedom vs office</h3>
-            <p>
-              In freelancing, however, you seem to feel more freedom but have to
-              deal with a shitload of things alone. Then you dream of returning
-              to the office. Sounds like insanity.
-            </p>
+            <h3>{languageData.about.tile2.title}</h3>
+            <p>{languageData.about.tile2.description}</p>
           </div>
         </motion.div>
         <motion.div
@@ -128,14 +124,8 @@ export default function About() {
             <img src={Image3} alt="" />
           </div>
           <div className="text">
-            <h3>44% of Burnouts</h3>
-            <p>
-              Almost 44% of full-time professionals experience burnout,
-              affecting productivity, work-life balance, and well-being,
-              potentially leading to depression and physical issues. Freelancers
-              also face stress from fears of not securing projects, handling
-              them, or facing contractual penalties.
-            </p>
+            <h3>{languageData.about.tile3.title}</h3>
+            <p>{languageData.about.tile3.description}</p>
           </div>
         </motion.div>
         <motion.div
@@ -147,14 +137,8 @@ export default function About() {
             <img src={Image4} alt="" />
           </div>
           <div className="text">
-            <h3>We got you covered</h3>
-            <p>
-              Thanks to us, you can finally solve these dilemmas. We will help
-              you to redefine your freelance work and guide you through the
-              process. No matter if you are a seasoned contractor or still
-              hesitant about making that first step. We make freelancing a
-              breeze.
-            </p>
+            <h3>{languageData.about.tile4.title}</h3>
+            <p>{languageData.about.tile4.description}</p>
           </div>
         </motion.div>
       </div>
@@ -167,12 +151,16 @@ export default function About() {
           className={
             "font-[500] text-[32px] leading-[41.6px] text-center 600px:text-[20px] 600px:leading-[26px]"
           }
+          dangerouslySetInnerHTML={{
+            __html: languageData.about.description,
+          }}
+        ></p>
+        <button
+          className="btn-primary"
+          onClick={(e) => handleScroll(e, "contact-section")}
         >
-          We'll provide you with the best care to{" "}
-          <br className={"600px:hidden"} />
-          unlock your true potential.
-        </p>
-        <button className="btn-primary">Contact us</button>
+          {languageData.about.contact}
+        </button>
       </motion.div>
     </section>
   );

@@ -1,8 +1,11 @@
 import React from "react";
 
 import Duck from "../../assets/life/duck.png";
+import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function LifePackage() {
+  const { languageData } = useLanguage();
+
   return (
     <section
       className={
@@ -10,10 +13,10 @@ export default function LifePackage() {
       }
     >
       <h1>
-        GOOD-LIFE PACKAGE <img src={Duck} alt="" /> <br />
-        <span>
-          THAT TAKES FREELANCING TO <br />A COMPLETELY NEW LEVEL
-        </span>
+        {languageData.life.h1} <img src={Duck} alt="" /> <br />
+        <span
+          dangerouslySetInnerHTML={{ __html: languageData.life.span }}
+        ></span>
       </h1>
     </section>
   );

@@ -14,6 +14,7 @@ import Footer from "./components/footer/Footer.jsx";
 
 import Lenis from "lenis";
 import { useEffect } from "react";
+import { LanguageProvider } from "./components/internationalization/LanguageContext.jsx";
 
 function App() {
   useEffect(() => {
@@ -27,22 +28,24 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Navbar />
-      <Heroarea />
-      <div className="parallax-content">
-        <About />
-        <LifePackage />
-        <SlidingTiles />
-        <Help />
-        <Paperwork />
-        <Advisory />
-        <Consulting />
-        <Struggling />
-        <Contact />
-        <Footer />
+    <LanguageProvider>
+      <div className={"overflow-x-clip"}>
+        <Navbar />
+        <Heroarea />
+        <div className="parallax-content">
+          <About />
+          <LifePackage />
+          <SlidingTiles />
+          <Help />
+          <Paperwork />
+          <Advisory />
+          <Consulting />
+          <Struggling />
+          <Contact />
+          <Footer />
+        </div>
       </div>
-    </>
+    </LanguageProvider>
   );
 }
 
