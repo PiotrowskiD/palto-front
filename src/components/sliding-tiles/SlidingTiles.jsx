@@ -149,7 +149,7 @@ export default function SlidingTiles() {
   const tile1SlideYMobile = useTransform(
     scrollYProgress,
     [0.34, 0.42],
-    ["0vw", "-120vh"],
+    ["0vh", "-120vh"],
   );
 
   const tile2SlideYMobile = useTransform(
@@ -166,7 +166,7 @@ export default function SlidingTiles() {
 
   return (
     <div
-      className="relative h-[300vh] 1280px:h-[600vh] 600px:h-[400vh]"
+      className="relative h-[300vh] 1280px:h-[600vh] 600px:h-[500vh]"
       ref={targetRef}
     >
       <div className="sticky top-0 h-screen">
@@ -360,7 +360,7 @@ export default function SlidingTiles() {
           </div>
         </section>
 
-        <section className="sliding-tiles h-[100vh] hidden 600px:block relative px-[40px] items-center justify-between 1280px:justify-center 600px:py-[60px] 600px:px-[16px]">
+        <section className="sliding-tiles h-[100vh] hidden 600px:block relative px-[40px] items-center justify-between 1280px:justify-center 600px:py-[60px] 600px:px-[0]">
           <motion.div
             className="description-wrapper absolute z-[-1] max-w-[586px] top-[18%] left-[50%] 1800px:left-[50%] translate-y-[-50%] text-center"
             style={{
@@ -379,7 +379,7 @@ export default function SlidingTiles() {
           </motion.div>
           <div className="tiles-wrapper">
             <motion.div
-              className="tile absolute px-[16px] top-[17%]"
+              className="tile absolute px-[16px] top-[25%]"
               style={{
                 x: tile1SlideXMobile,
                 y: tile1SlideYMobile,
@@ -396,7 +396,7 @@ export default function SlidingTiles() {
               </p>
             </motion.div>
             <motion.div
-              className="tile absolute px-[16px] top-[17%]"
+              className="tile absolute px-[16px] top-[25%]"
               style={{
                 x: tile2SlideXMobile,
                 y: tile2SlideYMobile,
@@ -413,7 +413,7 @@ export default function SlidingTiles() {
               </p>
             </motion.div>
             <motion.div
-              className="tile absolute px-[16px] top-[17%]"
+              className="tile absolute px-[16px] top-[25%]"
               style={{
                 x: tile3SlideXMobile,
                 y: tile3SlideYMobile,
@@ -428,7 +428,7 @@ export default function SlidingTiles() {
               </p>
             </motion.div>
             <motion.div
-              className="tile absolute px-[16px] top-[17%]"
+              className="tile absolute px-[16px] top-[25%]"
               style={{
                 x: tile4SlideXMobile,
               }}
