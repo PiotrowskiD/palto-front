@@ -5,8 +5,14 @@ import Image1 from "../../assets/about/1.png";
 import Image2 from "../../assets/about/2.png";
 import Image3 from "../../assets/about/3.png";
 import Image4 from "../../assets/about/4.png";
+import { scrollToSection } from "../../utils/scrollToSection.js";
 
 export default function About() {
+  const handleScroll = (e, sectionId) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
   // Title animation
 
   const targetRef = useRef(null);
@@ -172,7 +178,12 @@ export default function About() {
           <br className={"600px:hidden"} />
           unlock your true potential.
         </p>
-        <button className="btn-primary">Contact us</button>
+        <button
+          className="btn-primary"
+          onClick={(e) => handleScroll(e, "contact-section")}
+        >
+          Contact us
+        </button>
       </motion.div>
     </section>
   );

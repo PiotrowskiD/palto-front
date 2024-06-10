@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
+import { scrollToSection } from "../../utils/scrollToSection.js";
 
 export default function Heroarea() {
+  const handleScroll = (e, sectionId) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
   return (
     <div
       className={
@@ -47,6 +53,7 @@ export default function Heroarea() {
             duration: 0.5,
             ease: [0.645, 0.045, 0.355, 1],
           }}
+          onClick={(e) => handleScroll(e, "contact-section")}
         >
           Start living!
         </motion.button>

@@ -2,7 +2,10 @@ import ContactForm from "./ContactForm.jsx";
 
 export default function Contact() {
   return (
-    <section className={"contact-section relative overflow-hidden"}>
+    <section
+      className={"contact-section relative overflow-hidden"}
+      id="contact-section"
+    >
       <div className="left max-w-[450px] relative z-[2] 600px:max-w-[100%] 600px:w-full">
         <h1 className={"uppercase"}>Let&apos;s talk.</h1>
         <ContactForm />

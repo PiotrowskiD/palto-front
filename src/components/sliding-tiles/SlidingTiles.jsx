@@ -168,6 +168,7 @@ export default function SlidingTiles() {
     <div
       className="relative h-[300vh] 1280px:h-[600vh] 600px:h-[500vh]"
       ref={targetRef}
+      id="sliding-section"
     >
       <div className="sticky top-0 h-screen">
         <section className="sliding-tiles 1280px:hidden relative px-[40px] h-[100vh] flex items-center justify-between 1280px:h-auto 1280px:py-[187.5px] 1280px:justify-center 600px:py-[60px] 600px:px-[16px]">

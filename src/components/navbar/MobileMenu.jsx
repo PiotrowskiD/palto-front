@@ -1,9 +1,21 @@
+import { scrollToSection } from "../../utils/scrollToSection.js";
+
 export default function MobileMenu({
   isMobileMenuToggled,
   handleMobileMenuToggle,
   isLanguageDropdownToggled,
   handleLanguageDropdownToggle,
 }) {
+  const handleScroll = (e, sectionId) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
+  const handleBoth = (e, sectionId) => {
+    handleScroll(e, sectionId);
+    handleMobileMenuToggle();
+  };
+
   return (
     <>
       <div
@@ -30,13 +42,22 @@ export default function MobileMenu({
           </svg>
         </div>
         <div className="mobile-options mt-[80px] font-[500] flex flex-col gap-[20px] text-[24px] text-right">
-          <a href="" className="single-option">
+          <a
+            className="single-option cursor-pointer"
+            onClick={(e) => handleBoth(e, "about-section")}
+          >
             About
           </a>
-          <a href="" className="single-option">
+          <a
+            className="single-option cursor-pointer"
+            onClick={(e) => handleBoth(e, "sliding-section")}
+          >
             Rent-a-dev
           </a>
-          <a href="" className="single-option">
+          <a
+            className="single-option cursor-pointer"
+            onClick={(e) => handleBoth(e, "paperwork-section")}
+          >
             Paperwork
           </a>
           <div
@@ -67,7 +88,12 @@ export default function MobileMenu({
             </ul>
           </div>
         </div>
-        <button className="btn-primary mt-[93px]">Contact us</button>
+        <button
+          className="btn-primary mt-[93px]"
+          onClick={(e) => handleBoth(e, "contact-section")}
+        >
+          Contact us
+        </button>
       </div>
     </>
   );

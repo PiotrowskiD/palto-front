@@ -165,6 +165,7 @@ nav .options-wrapper .contact-btn:hover {
 nav .options-wrapper .single-option {
     transition: 0.2s;
     border-bottom: 2px solid transparent;
+    cursor: pointer;
 }
 
 nav .options-wrapper a:not(:last-child) {

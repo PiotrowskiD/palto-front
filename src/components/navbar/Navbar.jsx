@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu.jsx";
 import { motion } from "framer-motion";
+import { scrollToSection } from "../../utils/scrollToSection.js";
 
 export default function Navbar() {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const [isScrolledOut, setIsScrolledOut] = useState(false);
   const [isLanguageDropdownToggled, setIsLanguageDropdownToggled] =
     useState(false);
+
+  const handleScroll = (e, sectionId) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
 
   const handleLanguageDropdownToggle = () => {
     setIsLanguageDropdownToggled(!isLanguageDropdownToggled);
@@ -140,20 +146,29 @@ export default function Navbar() {
               </ul>
             </div>
           </div>
-          <a href="" className="single-option">
+          <a
+            className="single-option"
+            onClick={(e) => handleScroll(e, "about-section")}
+          >
             About
           </a>
-          <a href="" className="single-option">
+          <a
+            className="single-option"
+            onClick={(e) => handleScroll(e, "sliding-section")}
+          >
             Rent-a-dev
           </a>
-          <a href="" className="single-option">
+          <a
+            className="single-option"
+            onClick={(e) => handleScroll(e, "paperwork-section")}
+          >
             Paperwork
           </a>
           <a
-            href=""
             className={
-              "bg-[#E9EB76] px-[20px] py-[8.5px] rounded-[200px] contact-btn"
+              "bg-[#E9EB76] px-[20px] py-[8.5px] rounded-[200px] contact-btn cursor-pointer"
             }
+            onClick={(e) => handleScroll(e, "contact-section")}
           >
             Contact us
           </a>
