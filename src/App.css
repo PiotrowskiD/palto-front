@@ -803,3 +803,12 @@ nav svg.logo {
 nav svg path {
     transition: 0.3s;
 }
+
+footer .top a {
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+footer .top a:hover {
+    border-bottom: 2px solid #E9EB76;
+}
