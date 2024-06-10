@@ -8,7 +8,9 @@ export default function Struggling() {
       <img src={StrugglingImg} alt="" />
       <div className="text-wrapper">
         <div className="text">
-          <h1>Struggling with a tough part of a project?</h1>
+          <h1 className={"uppercase"}>
+            Struggling with a tough part of a project?
+          </h1>
           <p>
             Our senior consultants are here to support you in solving an
             unsolvable problem. They can also help you evaluate your projects in

@@ -23,8 +23,8 @@ export default function Advisory() {
   return (
     <div className="relative h-[300vh]" ref={targetRef}>
       <div className="sticky top-0 h-screen flex justify-center items-center">
-        <section className="advisory-section h-[100vh] flex justify-between items-center 1100px:h-auto 1100px:flex-col-reverse 1100px:pb-[60px]">
-          <div className="tile-wrapper 1100px:mt-[60px] relative flex flex-col items-center">
+        <section className="advisory-section h-[100vh] flex justify-between items-center 1280px:h-auto 1280px:flex-col-reverse 1280px:pb-[60px]">
+          <div className="tile-wrapper 1280px:mt-[60px] relative flex flex-col items-center">
             <motion.div
               className="tile absolute"
               style={{
@@ -63,7 +63,7 @@ export default function Advisory() {
             </motion.div>
           </div>
           <motion.img
-            className={"max-h-[100%] 1100px:hidden"}
+            className={"max-h-[100%] 1280px:hidden"}
             src={AdvisoryImg}
             alt=""
             style={{
@@ -71,7 +71,7 @@ export default function Advisory() {
             }}
           />
           <img
-            className={"hidden 1100px:block"}
+            className={"hidden 1280px:block"}
             src={AdvisoryMobileImg}
             alt=""
           />
