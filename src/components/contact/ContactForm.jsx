@@ -15,10 +15,15 @@ export default function ContactForm() {
     email: "",
     telephone: "",
     message: "",
+    consent: "",
   });
 
   const handleCheckboxChange = (e) => {
     setIsConsentChecked(e.target.checked);
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      consent: "", // Clear the error when the checkbox is checked
+    }));
   };
 
   const handleFormChange = (e) => {
@@ -64,6 +69,10 @@ export default function ContactForm() {
       newErrors.message = "Message cannot be empty";
       formIsValid = false;
     }
+    if (!isConsentChecked) {
+      newErrors.consent = "Please agree to the Privacy Policy";
+      formIsValid = false;
+    }
     // Add more validation checks for other fields if needed
 
     if (formIsValid) {
@@ -106,9 +115,7 @@ export default function ContactForm() {
           onChange={handleFormChange}
           className={"w-[100%]"}
         />
-        <p className={`error ${errors.telephone ? "active" : ""}`}>
-          {errors.name}
-        </p>
+        <p className={`error ${errors.name ? "active" : ""}`}>{errors.name}</p>
       </div>
       <div className={"w-[100%]"}>
         <input
@@ -119,7 +126,7 @@ export default function ContactForm() {
           onChange={handleFormChange}
           className={"w-[100%]"}
         />
-        <p className={`error ${errors.telephone ? "active" : ""}`}>
+        <p className={`error ${errors.email ? "active" : ""}`}>
           {errors.email}
         </p>
       </div>
@@ -145,21 +152,26 @@ export default function ContactForm() {
           onChange={handleFormChange}
           className={"w-[100%]"}
         />
-        <p className={`error ${errors.telephone ? "active" : ""}`}>
+        <p className={`error ${errors.message ? "active" : ""}`}>
           {errors.message}
         </p>
       </div>
-      <div className="checkbox-wrapper flex gap-[16px] items-start">
-        <label className="custom-checkbox">
-          <input
-            checked={isConsentChecked}
-            onChange={handleCheckboxChange}
-            type="checkbox"
-          />
-          <span className="checkmark"></span>
-        </label>
-        <p onClick={() => setIsConsentChecked(!isConsentChecked)}>
-          I agree to the Privacy Policy.
+      <div>
+        <div className="checkbox-wrapper flex gap-[16px] items-start">
+          <label className="custom-checkbox">
+            <input
+              checked={isConsentChecked}
+              onChange={handleCheckboxChange}
+              type="checkbox"
+            />
+            <span className="checkmark"></span>
+          </label>
+          <p onClick={() => setIsConsentChecked(!isConsentChecked)}>
+            I agree to the Privacy Policy.
+          </p>
+        </div>
+        <p className={`error ${errors.consent ? "active" : ""}`}>
+          {errors.consent}
         </p>
       </div>
       <button
