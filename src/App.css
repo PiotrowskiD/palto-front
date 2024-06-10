@@ -843,3 +843,13 @@ footer .top a {
 footer .top a:hover {
     border-bottom: 2px solid #E9EB76;
 }
+
+p.error {
+    height: 24px;
+    transition: 0.3s;
+    color: transparent;
+}
+
+p.error.active {
+    color: var(--primary-black);
+}

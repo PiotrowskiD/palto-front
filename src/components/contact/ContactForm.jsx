@@ -10,33 +10,85 @@ export default function ContactForm() {
     message: "",
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    telephone: "",
+    message: "",
+  });
+
   const handleCheckboxChange = (e) => {
     setIsConsentChecked(e.target.checked);
   };
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
+    let filteredValue = value;
+    if (name === "telephone") {
+      // Only allow digits for telephone number
+      filteredValue = value.replace(/\D/g, "");
+    }
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: filteredValue,
+    }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: "", // Clear the error when the user starts typing
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
-    try {
-      const result = await submitFormData(formData);
-      if (result.success) {
-        console.log("Form submitted successfully");
-        // You can perform additional actions here, such as showing a success message or redirecting the user
-      } else {
-        console.error("Failed to submit form:", result.message);
-        // Handle the failure, such as displaying an error message to the user
-      }
-    } catch (error) {
-      console.error("An error occurred:", error.message);
-      // Handle network or other errors
+
+    let formIsValid = true;
+    const newErrors = { ...errors };
+
+    // Validation checks
+    if (formData.name.trim() === "") {
+      newErrors.name = "Name is required";
+      formIsValid = false;
     }
+    if (formData.email.trim() === "") {
+      newErrors.email = "Email is required";
+      formIsValid = false;
+    } else if (!isValidEmail(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+      formIsValid = false;
+    }
+    if (formData.telephone.trim().length < 9) {
+      newErrors.telephone = "Telephone number must be 9 digits or longer";
+      formIsValid = false;
+    }
+    if (formData.message.trim() === "") {
+      newErrors.message = "Message cannot be empty";
+      formIsValid = false;
+    }
+    // Add more validation checks for other fields if needed
+
+    if (formIsValid) {
+      try {
+        const result = await submitFormData(formData);
+        if (result.success) {
+          console.log("Form submitted successfully");
+          // You can perform additional actions here, such as showing a success message or redirecting the user
+        } else {
+          console.error("Failed to submit form:", result.message);
+          // Handle the failure, such as displaying an error message to the user
+        }
+      } catch (error) {
+        console.error("An error occurred:", error.message);
+        // Handle network or other errors
+      }
+    } else {
+      setErrors(newErrors);
+    }
+  };
+
+  const isValidEmail = (email) => {
+    // Basic email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   return (
@@ -54,7 +106,9 @@ export default function ContactForm() {
           onChange={handleFormChange}
           className={"w-[100%]"}
         />
-        <p>Error</p>
+        <p className={`error ${errors.telephone ? "active" : ""}`}>
+          {errors.name}
+        </p>
       </div>
       <div className={"w-[100%]"}>
         <input
@@ -65,7 +119,9 @@ export default function ContactForm() {
           onChange={handleFormChange}
           className={"w-[100%]"}
         />
-        <p>Error</p>
+        <p className={`error ${errors.telephone ? "active" : ""}`}>
+          {errors.email}
+        </p>
       </div>
       <div className={"w-[100%]"}>
         <input
@@ -76,7 +132,9 @@ export default function ContactForm() {
           onChange={handleFormChange}
           className={"w-[100%]"}
         />
-        <p>Error</p>
+        <p className={`error ${errors.telephone ? "active" : ""}`}>
+          {errors.telephone}
+        </p>
       </div>
       <div className={"w-[100%]"}>
         <input
@@ -87,7 +145,9 @@ export default function ContactForm() {
           onChange={handleFormChange}
           className={"w-[100%]"}
         />
-        <p>Error</p>
+        <p className={`error ${errors.telephone ? "active" : ""}`}>
+          {errors.message}
+        </p>
       </div>
       <div className="checkbox-wrapper flex gap-[16px] items-start">
         <label className="custom-checkbox">
