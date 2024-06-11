@@ -222,14 +222,12 @@ nav .options-wrapper .single-option:hover {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     padding: 0 40px;
-    margin-top: 80px;
 
     @media (max-width: 1280px) {
         grid-template-columns: 1fr;
     }
 
     @media (max-width: 600px) {
-        margin-top: 40px;
         padding: 0 16px;
     }
 }

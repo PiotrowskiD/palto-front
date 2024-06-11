@@ -18,6 +18,8 @@ export default function About() {
 
   const targetRef = useRef(null);
 
+  const targetRefScrollable = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["end end", "end start"],
@@ -52,28 +54,33 @@ export default function About() {
     offset: ["start end", "end start"],
   });
 
-  const tile1Y = useTransform(tile1Progress, [0, 0.3], ["50%", "0%"]);
-  const tile1Opacity = useTransform(tile1Progress, [0, 0.3], [0, 1]);
-
   const { scrollYProgress: tile2Progress } = useScroll({
     target: refTile2,
     offset: ["start end", "end start"],
   });
 
-  const tile2Y = useTransform(tile2Progress, [0, 0.5], ["100%", "0%"]);
-  const tile2Opacity = useTransform(tile2Progress, [0, 0.4], [0.7, 1]);
+  const { scrollYProgress: scrollProgress } = useScroll({
+    target: targetRefScrollable,
+    offset: ["start end", "end start"],
+  });
 
-  const tile3Y = useTransform(tile1Progress, [0, 0.7], ["30%", "0%"]);
-  const tile3Opacity = useTransform(tile1Progress, [0, 0.3], [0, 1]);
+  const tile1Y = useTransform(scrollProgress, [0, 0.25], ["100vh", "0vh"]);
+  const tile1Opacity = useTransform(scrollProgress, [0, 0.25], [0, 1]);
 
-  const tile4Y = useTransform(tile2Progress, [0, 0.7], ["80%", "0%"]);
-  const tile4Opacity = useTransform(tile2Progress, [0, 0.4], [0.7, 1]);
+  const tile2Y = useTransform(scrollProgress, [0.15, 0.4], ["100vh", "0vh"]);
+  const tile2Opacity = useTransform(scrollProgress, [0.15, 0.4], [0, 1]);
+
+  const tile3Y = useTransform(scrollProgress, [0.25, 0.5], ["100vh", "0vh"]);
+  const tile3Opacity = useTransform(scrollProgress, [0.25, 0.5], [0, 1]);
+
+  const tile4Y = useTransform(scrollProgress, [0.4, 0.6], ["100vh", "0vh"]);
+  const tile4Opacity = useTransform(scrollProgress, [0.4, 0.6], [0, 1]);
 
   const { languageData } = useLanguage();
 
   return (
     <section className={"about-section"} id={"about-section"}>
-      <div className="header-wrapper flex flex-col items-center gap-[40px] pt-[120px] 600px:gap-[16px] 600px:pt-[60px] 600px:px-[16px]">
+      <div className="header-wrapper flex flex-col items-center mb-[80px] 600px:mb-[40px] gap-[40px] pt-[120px] 600px:gap-[16px] 600px:pt-[60px] 600px:px-[16px]">
         <motion.h1
           className="font-[800] text-[80px] uppercase leading-[80px] text-center 996px:text-[60px] 996px:leading-[60px] 600px:text-[36px] 600px:leading-[34.2px]"
           ref={targetRef}
@@ -88,59 +95,63 @@ export default function About() {
           dangerouslySetInnerHTML={{ __html: languageData.about.p }}
         ></motion.p>
       </div>
-      <div className="tiles-wrapper">
-        <motion.div
-          className="tile"
-          ref={refTile1}
-          style={{ y: tile1Y, opacity: tile1Opacity }}
-        >
-          <div className="image-wrapper">
-            <img src={Image1} alt="" />
+      <div className="relative h-[250vh]" ref={targetRefScrollable}>
+        <div className="sticky top-0 h-screen flex justify-center items-center">
+          <div className="tiles-wrapper">
+            <motion.div
+              className="tile"
+              ref={refTile1}
+              style={{ y: tile1Y, opacity: tile1Opacity }}
+            >
+              <div className="image-wrapper">
+                <img src={Image1} alt="" />
+              </div>
+              <div className="text">
+                <h3>{languageData.about.tile1.title}</h3>
+                <p>{languageData.about.tile1.description}</p>
+              </div>
+            </motion.div>
+            <motion.div
+              className="tile"
+              ref={refTile2}
+              style={{ y: tile2Y, opacity: tile2Opacity }}
+            >
+              <div className="image-wrapper">
+                <img src={Image2} alt="" />
+              </div>
+              <div className="text">
+                <h3>{languageData.about.tile2.title}</h3>
+                <p>{languageData.about.tile2.description}</p>
+              </div>
+            </motion.div>
+            <motion.div
+              className="tile"
+              ref={refTile3}
+              style={{ y: tile3Y, opacity: tile3Opacity }}
+            >
+              <div className="image-wrapper">
+                <img src={Image3} alt="" />
+              </div>
+              <div className="text">
+                <h3>{languageData.about.tile3.title}</h3>
+                <p>{languageData.about.tile3.description}</p>
+              </div>
+            </motion.div>
+            <motion.div
+              className="tile"
+              ref={refTile4}
+              style={{ y: tile4Y, opacity: tile4Opacity }}
+            >
+              <div className="image-wrapper">
+                <img src={Image4} alt="" />
+              </div>
+              <div className="text">
+                <h3>{languageData.about.tile4.title}</h3>
+                <p>{languageData.about.tile4.description}</p>
+              </div>
+            </motion.div>
           </div>
-          <div className="text">
-            <h3>{languageData.about.tile1.title}</h3>
-            <p>{languageData.about.tile1.description}</p>
-          </div>
-        </motion.div>
-        <motion.div
-          className="tile"
-          ref={refTile2}
-          style={{ y: tile2Y, opacity: tile2Opacity }}
-        >
-          <div className="image-wrapper">
-            <img src={Image2} alt="" />
-          </div>
-          <div className="text">
-            <h3>{languageData.about.tile2.title}</h3>
-            <p>{languageData.about.tile2.description}</p>
-          </div>
-        </motion.div>
-        <motion.div
-          className="tile"
-          ref={refTile3}
-          style={{ y: tile3Y, opacity: tile3Opacity }}
-        >
-          <div className="image-wrapper">
-            <img src={Image3} alt="" />
-          </div>
-          <div className="text">
-            <h3>{languageData.about.tile3.title}</h3>
-            <p>{languageData.about.tile3.description}</p>
-          </div>
-        </motion.div>
-        <motion.div
-          className="tile"
-          ref={refTile4}
-          style={{ y: tile4Y, opacity: tile4Opacity }}
-        >
-          <div className="image-wrapper">
-            <img src={Image4} alt="" />
-          </div>
-          <div className="text">
-            <h3>{languageData.about.tile4.title}</h3>
-            <p>{languageData.about.tile4.description}</p>
-          </div>
-        </motion.div>
+        </div>
       </div>
       <motion.div
         className="contact-wrapper flex flex-col items-center mt-[80px] gap-[40px] 600px:px-[16px]"
