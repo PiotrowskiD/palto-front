@@ -452,6 +452,7 @@ nav .options-wrapper .single-option:hover {
 
     @media (max-width: 600px) {
         padding: 20px;
+        margin: 0;
     }
 }
 
