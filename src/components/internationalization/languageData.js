@@ -209,9 +209,11 @@ const languageData = {
     },
     help: {
       title:
-        "Palto is here to help you regain control over your work and start living to the fullest.",
+        "Palto istnieje, aby pomóc Ci odzyskać kontrolę nad swoją pracą i zacząć żyć pełnią życia.",
       description:
-        "You can hire support to work less and earn just a little less, or you can work as much as before but take on more projects and earn significantly more. The choice is yours.",
+        "Możesz zatrudnić wsparcie, poświęcając ułamek zarobków, ale odzyskać mnóstwo cennego\n" +
+        "czasu. Możesz też pracować tyle samo co wcześniej, ale brać większą liczbę projektów, by\n" +
+        "zarabiać znacznie więcej. Wybór należy do Ciebie.",
     },
     paperwork: {
       title: "PAPIERKOWA ROBOTA",
