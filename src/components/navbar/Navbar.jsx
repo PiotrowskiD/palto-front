@@ -31,22 +31,23 @@ export default function Navbar() {
     };
 
     const handleScroll = () => {
-      const heroSection = document.getElementById("about-section");
-      if (heroSection) {
-        const rect = heroSection.getBoundingClientRect();
-        const isOut = rect.top <= 95;
-        setIsScrolledOut(isOut);
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      if (scrollY >= window.innerHeight) {
+        setIsScrolledOut(true);
+      } else {
+        setIsScrolledOut(false);
       }
     };
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
 
+    // Cleanup event listeners on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, []); // Empty dependency array ensures this effect runs only once
 
   const { languageData, switchLanguage, currentLanguage } = useLanguage();
 
