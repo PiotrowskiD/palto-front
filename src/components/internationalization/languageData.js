@@ -129,9 +129,9 @@ const languageData = {
 
   pl: {
     navbar: {
-      about: "O nas",
-      rentDev: "Wynajmij deva",
-      paperwork: "Dokumenty",
+      about: "O Nas",
+      rentDev: "Dev na wynajem",
+      paperwork: "Papierkowa robota",
       contact: "Kontakt",
     },
     hero: {
