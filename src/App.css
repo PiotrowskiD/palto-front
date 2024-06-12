@@ -83,7 +83,7 @@ nav .options-wrapper {
     }
 }
 
-nav .options-wrapper:hover {
+nav .options-wrapper.hovered {
     padding: 6px 6px 6px 32px;
 }
 
@@ -130,18 +130,18 @@ nav .options-wrapper .contact-btn {
 }
 
 /* Apply animation on hover */
-nav .options-wrapper:hover .contact-btn {
+nav .options-wrapper.hovered .contact-btn {
     animation: growFadeIn 0.5s forwards;
     width: 400px;
     padding: 8.5px 20px;
 }
-nav .options-wrapper:not(:hover) .contact-btn {
+nav .options-wrapper:not(.hovered) .contact-btn {
     animation: shrinkFadeOut 0.5s forwards;
     width: 0;
     padding: 0;
 }
 
-nav .options-wrapper:not(:hover):not(.hovered) .contact-btn {
+nav .options-wrapper:not(.hovered):not(.hovered) .contact-btn {
     animation: shrinkFadeOut 0.5s forwards;
     width: 0;
     padding: 0;

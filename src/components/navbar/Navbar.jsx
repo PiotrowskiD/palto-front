@@ -5,6 +5,31 @@ import { scrollToSection } from "../../utils/scrollToSection.js";
 import { useLanguage } from "../internationalization/LanguageContext.jsx";
 
 export default function Navbar() {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isCooldown, setIsCooldown] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (!isCooldown) {
+      setIsHovered(true);
+      setIsCooldown(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setIsCooldown(true);
+  };
+
+  useEffect(() => {
+    if (isCooldown) {
+      const cooldownTimer = setTimeout(() => {
+        setIsCooldown(false);
+      }, 500);
+
+      return () => clearTimeout(cooldownTimer);
+    }
+  }, [isCooldown]);
+
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const [isScrolledOut, setIsScrolledOut] = useState(false);
   const [isLanguageDropdownToggled, setIsLanguageDropdownToggled] =
@@ -126,7 +151,9 @@ export default function Navbar() {
         }}
       >
         <div
-          className={`options-wrapper ${isLanguageDropdownToggled ? "hovered" : ""}`}
+          className={`options-wrapper ${isLanguageDropdownToggled ? "hovered" : ""} ${isHovered ? "hovered" : ""}`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <div
             className="dropdown-toggler relative flex items-center gap-[12px] cursor-pointer mr-[12px]"
