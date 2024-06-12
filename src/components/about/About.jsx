@@ -17,6 +17,7 @@ export default function About() {
   // Title animation
 
   const targetRef = useRef(null);
+  const targetRefMobile = useRef(null);
 
   const targetRefScrollable = useRef(null);
   const targetRefScrollableMobile = useRef(null);
@@ -212,7 +213,7 @@ export default function About() {
         <div className="header-wrapper flex flex-col items-center mb-[80px] 600px:mb-[40px] gap-[40px] pt-[120px] 600px:gap-[16px] 600px:pt-[60px] 600px:px-[16px]">
           <motion.h1
             className="font-[800] text-[80px] uppercase leading-[80px] text-center 996px:text-[60px] 996px:leading-[60px] 600px:text-[36px] 600px:leading-[34.2px]"
-            ref={targetRef}
+            ref={targetRefMobile}
             style={{ y: h1Y, opacity: h1Opacity }}
             dangerouslySetInnerHTML={{ __html: languageData.about.h1 }}
           ></motion.h1>
