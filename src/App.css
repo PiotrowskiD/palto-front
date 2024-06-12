@@ -702,13 +702,20 @@ nav .options-wrapper .single-option:hover {
     color: #565551;
 }
 
-.contact-form p {
+.contact-form p.error {
+    margin-top: 6px;
+    margin-bottom: 4px;
+    cursor: auto;
+}
+
+.contact-form p.error.active {
     font-size: 16px;
     font-weight: 500;
     display: flex;
     gap: 16px;
-    cursor: pointer;
+    cursor: auto;
     user-select: none;
+    color: #835599
 }
 
 footer .top {

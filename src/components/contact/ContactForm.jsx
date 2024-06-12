@@ -1,9 +1,17 @@
 import { useState } from "react";
 import { submitFormData } from "../../utils/action.submitFormData.js";
 import { useLanguage } from "../internationalization/LanguageContext.jsx";
+import Feedback from "./Feedback.jsx";
 
 export default function ContactForm() {
   const { languageData } = useLanguage();
+
+  const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
+  const [isFeedbackPositive, setIsFeedbackPositive] = useState(false);
+
+  const handleFeedbackVisibility = () => {
+    setIsFeedbackVisible(!isFeedbackVisible);
+  };
 
   const [isConsentChecked, setIsConsentChecked] = useState(false);
   const [formData, setFormData] = useState({
@@ -83,9 +91,13 @@ export default function ContactForm() {
         const result = await submitFormData(formData);
         if (result.success) {
           console.log("Form submitted successfully");
+          setIsFeedbackVisible(true);
+          setIsFeedbackPositive(true);
           // You can perform additional actions here, such as showing a success message or redirecting the user
         } else {
           console.error("Failed to submit form:", result.message);
+          setIsFeedbackVisible(true);
+          setIsFeedbackPositive(false);
           // Handle the failure, such as displaying an error message to the user
         }
       } catch (error) {
@@ -173,16 +185,22 @@ export default function ContactForm() {
             {languageData.contact.consent}
           </p>
         </div>
-        <p className={`error ${errors.consent ? "active" : ""}`}>
+        <p className={` mt-[6px] error ${errors.consent ? "active" : ""}`}>
           {errors.consent}
         </p>
       </div>
       <button
-        className="btn-primary self-start mt-[40px]"
+        className={`btn-primary self-start mt-[40px] ${isFeedbackPositive ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"}`}
         onClick={handleSubmit}
       >
         {languageData.contact.button}
       </button>
+
+      <Feedback
+        isFeedbackVisible={isFeedbackVisible}
+        handleFeedbackVisibility={handleFeedbackVisibility}
+        isFeedbackPositive={isFeedbackPositive}
+      />
     </div>
   );
 }
