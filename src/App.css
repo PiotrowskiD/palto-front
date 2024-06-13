@@ -287,7 +287,21 @@ nav .options-wrapper .single-option:hover {
 .about-section .tiles-wrapper .tile p {
     color: var(--primary-black);
     font-size: 18px;
-    line-height: 25.2px;
+    line-height: 120%;
+    font-weight: 500;
+    margin-top: 25px;
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+        line-height: 22.4px;
+        margin-top: 12px;
+    }
+}
+
+.about-section .tiles-wrapper .tile p.polish {
+    color: var(--primary-black);
+    font-size: 16px;
+    line-height: 120%;
     font-weight: 500;
     margin-top: 25px;
 

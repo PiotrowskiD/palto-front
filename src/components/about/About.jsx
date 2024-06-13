@@ -105,7 +105,7 @@ export default function About() {
     ["10vh", "0vh"],
   );
 
-  const { languageData } = useLanguage();
+  const { languageData, currentLanguage } = useLanguage();
 
   return (
     <>
@@ -118,9 +118,7 @@ export default function About() {
             dangerouslySetInnerHTML={{ __html: languageData.about.h1 }}
           ></motion.h1>
           <motion.p
-            className={
-              "font-500 text-[32px] leading-[41.6px] text-[#343331] text-center 600px:text-[20px] 600px:leading-[26px]"
-            }
+            className={`font-500 text-[32px] leading-[41.6px] text-[#343331] text-center 600px:text-[20px] 600px:leading-[26px]`}
             style={{ y: pY, opacity: pOpacity }}
             dangerouslySetInnerHTML={{ __html: languageData.about.p }}
           ></motion.p>
@@ -138,7 +136,9 @@ export default function About() {
                 </div>
                 <div className="text">
                   <h3>{languageData.about.tile1.title}</h3>
-                  <p>{languageData.about.tile1.description}</p>
+                  <p className={`${currentLanguage === "pl" ? "polish" : ""} `}>
+                    {languageData.about.tile1.description}
+                  </p>
                 </div>
               </motion.div>
               <motion.div
@@ -151,7 +151,9 @@ export default function About() {
                 </div>
                 <div className="text">
                   <h3>{languageData.about.tile2.title}</h3>
-                  <p>{languageData.about.tile2.description}</p>
+                  <p className={`${currentLanguage === "pl" ? "polish" : ""} `}>
+                    {languageData.about.tile2.description}
+                  </p>
                 </div>
               </motion.div>
               <motion.div
@@ -164,7 +166,9 @@ export default function About() {
                 </div>
                 <div className="text">
                   <h3>{languageData.about.tile3.title}</h3>
-                  <p>{languageData.about.tile3.description}</p>
+                  <p className={`${currentLanguage === "pl" ? "polish" : ""} `}>
+                    {languageData.about.tile3.description}
+                  </p>
                 </div>
               </motion.div>
               <motion.div
@@ -177,7 +181,9 @@ export default function About() {
                 </div>
                 <div className="text">
                   <h3>{languageData.about.tile4.title}</h3>
-                  <p>{languageData.about.tile4.description}</p>
+                  <p className={`${currentLanguage === "pl" ? "polish" : ""} `}>
+                    {languageData.about.tile4.description}
+                  </p>
                 </div>
               </motion.div>
             </div>
@@ -236,7 +242,9 @@ export default function About() {
             </div>
             <div className="text">
               <h3>{languageData.about.tile1.title}</h3>
-              <p>{languageData.about.tile1.description}</p>
+              <p className={`${currentLanguage === "pl" ? "polish" : ""} `}>
+                {languageData.about.tile1.description}
+              </p>
             </div>
           </motion.div>
           <motion.div
@@ -249,7 +257,9 @@ export default function About() {
             </div>
             <div className="text">
               <h3>{languageData.about.tile2.title}</h3>
-              <p>{languageData.about.tile2.description}</p>
+              <p className={`${currentLanguage === "pl" ? "polish" : ""} `}>
+                {languageData.about.tile2.description}
+              </p>
             </div>
           </motion.div>
           <motion.div
@@ -262,7 +272,10 @@ export default function About() {
             </div>
             <div className="text">
               <h3>{languageData.about.tile3.title}</h3>
-              <p>{languageData.about.tile3.description}</p>
+              <p className={`${currentLanguage === "pl" ? "polish" : ""} `}>
+                {" "}
+                {languageData.about.tile3.description}
+              </p>
             </div>
           </motion.div>
           <motion.div
@@ -275,7 +288,9 @@ export default function About() {
             </div>
             <div className="text">
               <h3>{languageData.about.tile4.title}</h3>
-              <p>{languageData.about.tile4.description}</p>
+              <p className={`${currentLanguage === "pl" ? "polish" : ""} `}>
+                {languageData.about.tile4.description}
+              </p>
             </div>
           </motion.div>
         </div>
