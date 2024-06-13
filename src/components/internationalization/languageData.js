@@ -130,53 +130,45 @@ const languageData = {
   pl: {
     navbar: {
       about: "O Nas",
-      rentDev: "Dev na wynajem",
+      rentDev: "Wynajmij deva",
       paperwork: "Papierkowa robota",
       contact: "Kontakt",
     },
     hero: {
-      h1: "SPRAWIAMY, ŻE<br className='600px:hidden' /> FREELANCING AI JEST <br className='600px:hidden' /> PROSTY I BEZSTRESOWY.",
+      h1: "CZYNIMY FREELANCING AI <br className='600px:hidden' />ŁATWYM I BEZSTRESOWYM.",
       p: "Skoncentruj się na tym co istotne i zacznij prowadzić zbalansowane życie.",
       button: "Zacznij żyć!",
     },
     about: {
       h1: "ROZUMIEMY <br />TWOJE DYLEMATY",
-      p: "Praca na etacie i freelancing mają swoje zalety, <br />ale także wady.",
+      p: "Praca na etacie i freelancing mają swoje <br />zalety, ale także wady.",
       tile1: {
-        title: "FREELANCE DREAM",
+        title: "Marzenie freelancera",
         description:
-          "Praca na etacie i freelancing mają swoje zalety, ale także wady. W korporacji co miesiąc\n" +
-          "otrzymujesz pensję, lecz utkniesz na niekończących się i bezsensownych spotkaniach. Albo\n" +
-          "zostajesz w biurze po godzinach, próbując wreszcie zrobić to, za co Ci płacą. Zaczynasz marzyć o\n" +
-          "zostaniu freelancerem.",
+          "W korporacji co miesiąc otrzymujesz pensję, lecz utkniesz na niekończących się i bezsensownych spotkaniach. Albo zostajesz w biurze po godzinach, próbując wreszcie zrobić to, za co Ci płacą. Zaczynasz marzyć o zostaniu freelancerem.",
       },
       tile2: {
-        title: "FREEDOM VS OFFICE",
+        title: "Wolność vs korpo",
         description:
-          "Pracując jako freelancer, masz wreszcie wymarzoną wolność, ale nagle wszystko jest na Twojej\n" +
-          "głowie. Marzysz wtedy o powrocie na ciepłą posadkę. To brzmi jak szaleństwo.",
+          "Pracując jako freelancer, masz wreszcie wymarzoną wolność, ale nagle wszystko jest na Twojej głowie. Marzysz wtedy o powrocie na ciepłą posadkę. To brzmi jak szaleństwo.",
       },
       tile3: {
-        title: "44% OF BURNOUTS",
+        title: "44% wypaleń",
         description:
-          "Prawie 44% pełnoetatowych specjalistów doświadcza wypalenia zawodowego, które wpływa na\n" +
-          "produktywność, życie zawodowe, równowagę i ogólne samopoczucie. Prowadzi to do depresji i\n" +
-          "innych problemów psychicznych, a nawet fizycznych. Z drugiej strony, freelancerzy też mają\n" +
-          "powody do stresu. Boją się, że nie złapią nowego projektu, lub że nie poradzą sobie z bieżącym,\n" +
-          "co może grozić im karami finansowymi.",
+          "Prawie 44% specjalistów na pełnym etacie doświadcza wypalenia zawodowego, wpływającego na produktywność i samopoczucie, co może prowadzić do depresji i problemów fizycznych. Freelancerzy również doświadczają stresu związanego z obawami o brak projektów, ich realizację lub kary umowne.",
       },
       tile4: {
-        title: "WE GOT YOU COVERED",
+        title: "zaopiekujemy się tobą",
         description:
-          "Dzięki nam rozwiążesz te dylematy. Pomożemy Ci na nowo zdefiniować Twoją pracę jako freelancer i przeprowadzimy Cię przez cały proces. Nieważne, czy jesteś doświadczonym, czy dopiero wahasz się, czy zrobić ten pierwszy krok. My sprawiamy, że freelancing staje się dziecinnie prosty.",
+          "Dzięki nam rozwiążesz te dylematy. Pomożemy Ci na nowo zdefiniować Twoją pracę jako freelancer i przeprowadzimy Cię przez cały proces. Nieważne, czy jesteś doświadczonym kontraktorem, czy dopiero wahasz się, czy zrobić ten pierwszy krok. My sprawiamy, że freelancing staje się dziecinnie prosty.",
       },
       description:
-        "Zapewnimy Ci najlepszą opiekę, aby uwolnić<br className='600px:hidden' />Twój prawdziwy potencjał.",
-      contact: "Kontakt",
+        "Zapewnimy Ci najlepszą opiekę, aby<br className='600px:hidden' />uwolnić Twój prawdziwy potencjał.",
+      contact: "Skontaktuj się",
     },
     life: {
-      h1: "FREELANCING",
-      span: "NA ZUPEŁNIE NOWYM POZIOMIE.<br />TAK TRZEBA ŻYĆ",
+      h1: "TAK TRZEBA ŻYĆ",
+      span: "FREELANCING NA ZUPEŁNIE <br />NOWYM POZIOMIE",
     },
     outstaffing: {
       title: "WYNAJEM INŻYNIERÓW AI",
@@ -186,10 +178,7 @@ const languageData = {
       tile1: {
         title: "Pracuj mądrze i zarabiaj więcej",
         description:
-          "Oszczędź czas i energię. Przekaż te najbardziej czasochłonne zadania wynajętemu specjaliście,\n" +
-          "abyś mógł skupić się na ważniejszych sprawach. Palto, mając doświadczenie w pracy z\n" +
-          "freelancerami, zapewni Ci sprawdzone wsparcie. Zatrudnij ich na dowolny okres, ciesząc się\n" +
-          "elastycznością i spokojem, bez zobowiązań wynikających z zatrudnienia stałych pracowników.",
+          "Oszczędź czas i energię. Przekaż te najbardziej czasochłonne zadania wynajętemu specjaliście, abyś mógł skupić się na ważniejszych sprawach. Palto, mając doświadczenie w pracy z freelancerami, zapewni Ci sprawdzone wsparcie. Zatrudnij ich na dowolny okres, ciesząc się elastycznością i spokojem, bez zobowiązań wynikających z zatrudnienia stałych pracowników.",
       },
       tile2: {
         title: "AI Dev na wynajem",
@@ -219,19 +208,18 @@ const languageData = {
       title: "PAPIERKOWA ROBOTA",
       description:
         "Wykonujemy wszystkie te nudne rzeczy, abyś Ty nie musiał. Życie jest lepsze bez stresu związanego z podatkami i kwestiami prawnymi. Zdejmiemy to z Twoich barków. Zorganizujemy wszystko, czego potrzebujesz, abyś mógł skupić się na pracy bez żadnych zakłóceń.",
-      button: "Dołącz do nas",
+      button: "Dołącz do nas!",
     },
     advisory: {
       tile1: {
         title: "Doradztwo prawne",
         description:
-          "Prawnicy Palto zajmą się prawną stroną Twojego freelancingu. Doskonale znamy specyfikę umów IT, niezależnie od tego, czy są to umowy ramowe, umowy PM, czy SLA. Sprawdzimy każdą z nich, aby upewnić się, że jesteś w pełni chroniony i rozumiesz, na co się zgadzasz.",
+          "Prawnicy Palto zajmą się wszelkimi prawnymi aspektami Twojego freelancingu. Doświadczeni w umowach IT, zadbamy o Twoje zabezpieczenie i zrozumienie umów. Niezależnie od tego, czy jesteś nowicjuszem, czy doświadczonym freelancerem, stworzymy lub przeanalizujemy umowy, aby chronić Twoje interesy, a nasi eksperci zajmą się negocjacjami.",
       },
       tile2: {
         title: "Usługi księgowe",
         description:
-          "Zajmiemy się wszystkimi aspektami księgowymi, od wypełnienia i złożenia dokumentów, po\n" +
-          "wypełnienie raportów finansowych i podatkowych. <br /> <br />Doradztwo podatkowe Palto: śledzimy i analizujemy wszelkie zmiany w przepisach podatkowych oraz ich skutki w długoterminowej perspektywie. Życie jest piękniejsze, gdy możesz spać spokojnie i mieć trochę więcej kasy w kieszeni. Pomożemy Ci zoptymalizować Twoje podatki tak, aby to osiągnąć.",
+          "Zajmiemy się wszystkimi aspektami księgowymi, od wypełnienia i złożenia dokumentów, po wypełnienie raportów finansowych i podatkowych. <br /> <br />Doradztwo podatkowe Palto: śledzimy i analizujemy wszelkie zmiany w przepisach podatkowych oraz ich skutki w długoterminowej perspektywie. Życie jest piękniejsze, gdy możesz spać spokojnie i mieć trochę więcej kasy w kieszeni. Pomożemy Ci zoptymalizować Twoje podatki tak, aby to osiągnąć. ",
       },
     },
     consulting: {

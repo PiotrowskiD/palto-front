@@ -5,7 +5,7 @@ export default function Help() {
 
   return (
     <section className={"help-section"}>
-      <h1>{languageData.help.title}</h1>
+      <h1 className={"uppercase"}>{languageData.help.title}</h1>
       <p>{languageData.help.description}</p>
     </section>
   );
