@@ -408,6 +408,18 @@ nav .options-wrapper .single-option:hover {
     }
 }
 
+.help-section h1.polish-text {
+    line-height: 120%;
+
+    @media (max-width: 800px) {
+        font-size: 44px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 24px;
+    }
+}
+
 .help-section p {
     font-weight: 500;
     font-size: 32px;
