@@ -1,22 +1,22 @@
-@import url("https://p.typekit.net/p.css?s=1&k=fkv6dks&ht=tk&f=10887.15586&a=16139789&app=typekit&e=css");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-  font-family:"futura-pt";
-  src:url("https://use.typekit.net/af/0c71d1/000000000000000000010097/27/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n8&v=3") format("woff2"),url("https://use.typekit.net/af/0c71d1/000000000000000000010097/27/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n8&v=3") format("woff"),url("https://use.typekit.net/af/0c71d1/000000000000000000010097/27/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n8&v=3") format("opentype");
-  font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
+  font-family: 'FuturaPTExtraBold';
+  src:
+          url('fonts/futura-pt_extrabold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family:"futura-pt";
-  src:url("https://use.typekit.net/af/c4c302/000000000000000000012192/27/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n6&v=3") format("woff2"),url("https://use.typekit.net/af/c4c302/000000000000000000012192/27/d?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n6&v=3") format("woff"),url("https://use.typekit.net/af/c4c302/000000000000000000012192/27/a?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n6&v=3") format("opentype");
-  font-display:auto;font-style:normal;font-weight:600;font-stretch:normal;
+  font-family: 'FuturaPTDemi';
+  src:
+          url('fonts/futura-pt_demi.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
-
-.tk-futura-pt { font-family: "futura-pt",sans-serif; }
 
 body {
   margin: 0;

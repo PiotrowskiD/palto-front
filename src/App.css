@@ -14,7 +14,7 @@ html {
 }
 
 * {
-    font-family: "futura-pt", sans-serif;
+    font-family: "FuturaPTDemi", sans-serif;
     font-style: normal;
 }
 
@@ -38,6 +38,50 @@ body {
     @media (max-width: 600px) {
         background-position: 65%;
     }
+}
+
+.heroarea-wrapper h1 {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.about-section .header-wrapper h1 {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.about-section .tile h3 {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.life-package h1, .life-package span {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.sliding-tiles h2, .sliding-tiles h3 {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.help-section h1 {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.paperwork-section h1 {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.advisory-section h3 {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.consulting-section h1 {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.struggling-section h1 {
+    font-family: FuturaPTExtraBold, serif;
+}
+
+.contact-section h1 {
+    font-family: FuturaPTExtraBold, serif;
 }
 
 button.btn-primary {
