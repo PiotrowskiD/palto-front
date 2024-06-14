@@ -1,13 +1,16 @@
 export async function submitFormData(formData) {
   try {
     // Make a POST request to your API
-    const response = await fetch(`http://localhost:1337/api/message`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      `${import.meta.env.VITE_STRAPI_URL}/api/message`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), // Send the form data as JSON
       },
-      body: JSON.stringify(formData), // Send the form data as JSON
-    });
+    );
 
     if (response.ok) {
       // Return a success message or data as needed
