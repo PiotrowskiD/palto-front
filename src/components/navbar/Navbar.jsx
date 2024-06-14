@@ -34,6 +34,8 @@ export default function Navbar() {
   const [isScrolledOut, setIsScrolledOut] = useState(false);
   const [isLanguageDropdownToggled, setIsLanguageDropdownToggled] =
     useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   const handleScroll = (e, sectionId) => {
     e.preventDefault();
@@ -56,12 +58,13 @@ export default function Navbar() {
     };
 
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      if (scrollY >= window.innerHeight) {
-        setIsScrolledOut(true);
-      } else {
-        setIsScrolledOut(false);
-      }
+      const currentScrollPos =
+        window.scrollY || document.documentElement.scrollTop;
+      setIsNavbarVisible(
+        prevScrollPos > currentScrollPos || currentScrollPos < 10,
+      );
+      setPrevScrollPos(currentScrollPos);
+      setIsScrolledOut(currentScrollPos >= window.innerHeight);
     };
 
     window.addEventListener("resize", handleResize);
@@ -72,7 +75,7 @@ export default function Navbar() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array ensures this effect runs only once
+  }, [prevScrollPos]);
 
   const { languageData, switchLanguage, currentLanguage } = useLanguage();
 
@@ -82,10 +85,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={
-        "flex p-[40px] w-full max-w-[100vw] justify-between items-center 600px:px-[16px] 600px:py-[63px]"
-      }
+    <motion.nav
+      className={`flex p-[40px] w-full max-w-[100vw] justify-between items-center 600px:px-[16px] 600px:py-[63px] ${
+        isNavbarVisible ? "visible" : "invisible"
+      }`}
+      initial={{ y: 0 }}
+      animate={{ y: isNavbarVisible ? 0 : -100 }}
+      transition={{ type: "tween", duration: 0.2 }}
     >
       <motion.svg
         initial={{
@@ -256,6 +262,6 @@ export default function Navbar() {
         isLanguageDropdownToggled={isLanguageDropdownToggled}
         handleLanguageDropdownToggle={handleLanguageDropdownToggle}
       />
-    </nav>
+    </motion.nav>
   );
 }
