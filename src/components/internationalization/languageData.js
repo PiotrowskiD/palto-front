@@ -124,6 +124,12 @@ const languageData = {
         messageRequired: "Message cannot be empty",
         consentRequired: "Please agree to the Privacy Policy",
       },
+      feedback: {
+        positive:
+          "The message has been successfully sent! We will try to answer it as quickly as possible.",
+        negative:
+          "Error! The message was not sent. Please fill out the form again.",
+      },
     },
   },
 
@@ -253,6 +259,12 @@ const languageData = {
         telephoneLength: "Numer telefonu musi mieć 9 cyfr lub więcej",
         messageRequired: "Wiadomość nie może być pusta",
         consentRequired: "Proszę zgodzić się na Politykę Prywatności",
+      },
+      feedback: {
+        positive:
+          "Wiadomość została pomyślnie wysłana! Odpowiemy na nią jak najszybciej.",
+        negative:
+          "Błąd! Wiadomość nie została wysłana. Wypełnij formularz ponownie.",
       },
     },
   },
