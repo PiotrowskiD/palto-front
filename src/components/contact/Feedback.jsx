@@ -5,7 +5,7 @@ export default function Feedback({
 }) {
   return (
     <div
-      className={`feedback ${isFeedbackVisible ? "opacity-[1]" : "opacity-[0]"} transition-[0.3s] gap-[20px] items-baseline rounded-[16px] max-w-[587px] pt-[48px] pb-[32px] px-[32px] flex bg-[#FEFDFB] fixed bottom-[80px] right-[40px]`}
+      className={`feedback ${isFeedbackVisible ? "opacity-[1]" : "opacity-[0]"} ${isFeedbackVisible ? "pointer-events-auto" : "pointer-events-none"} transition-[0.3s] gap-[20px] items-baseline rounded-[16px] max-w-[30vw] 996px:max-w-[70vw] 600px:max-w-[100%] pt-[48px] pb-[32px] px-[32px] flex bg-[#FEFDFB] fixed bottom-[80px] right-[40px] 600px:right-[16px] 600px:left-[16px] 600px:bottom-[40px]`}
     >
       {isFeedbackPositive ? (
         <svg
@@ -37,7 +37,7 @@ export default function Feedback({
         </svg>
       )}
 
-      <p className={"font-[500] text-[32px]"}>
+      <p className={"font-[500] text-[32px] 600px:text-[24px]"}>
         {isFeedbackPositive
           ? "The message has been successfully sent! We will try to answer it as quickly as possible."
           : "Error! The message was not sent. Please fill out the form again."}
