@@ -8,6 +8,7 @@ export default function ContactForm() {
 
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
   const [isFeedbackPositive, setIsFeedbackPositive] = useState(false);
+  const [isWaitingForFeedback, setIsWaitingForFeedback] = useState(false);
 
   const handleFeedbackVisibility = () => {
     setIsFeedbackVisible(!isFeedbackVisible);
@@ -57,6 +58,8 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
 
+    setIsWaitingForFeedback(true);
+
     let formIsValid = true;
     const newErrors = { ...errors };
 
@@ -95,12 +98,14 @@ export default function ContactForm() {
           setIsFeedbackPositive(true);
           // You can perform additional actions here, such as showing a success message or redirecting the user
         } else {
+          setIsWaitingForFeedback(false);
           console.error("Failed to submit form:", result.message);
           setIsFeedbackVisible(true);
           setIsFeedbackPositive(false);
           // Handle the failure, such as displaying an error message to the user
         }
       } catch (error) {
+        setIsWaitingForFeedback(false);
         console.error("An error occurred:", error.message);
         // Handle network or other errors
       }
@@ -190,8 +195,8 @@ export default function ContactForm() {
         </p>
       </div>
       <button
-        className={`btn-primary self-start mt-[40px] ${isFeedbackPositive ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"}`}
-        onClick={handleSubmit}
+        className={`btn-primary self-start mt-[40px] ${isWaitingForFeedback ? "opacity-[0.4] pointer-events-none cursor-default" : ""} ${isFeedbackPositive ? "hidden pointer-events-none" : "opacity-[1] pointer-events-auto"}`}
+        onClick={!isWaitingForFeedback ? handleSubmit : null}
       >
         {languageData.contact.button}
       </button>
