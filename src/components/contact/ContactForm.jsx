@@ -195,7 +195,7 @@ export default function ContactForm() {
         </p>
       </div>
       <button
-        className={`btn-primary self-start mt-[40px] ${isWaitingForFeedback ? "opacity-[0.4] pointer-events-none cursor-default" : ""} ${isFeedbackPositive ? "hidden pointer-events-none" : "opacity-[1] pointer-events-auto"}`}
+        className={`btn-primary self-start mt-[40px] ${isWaitingForFeedback ? "opacity-[0.4] pointer-events-none cursor-default" : ""} ${isFeedbackPositive ? "hidden pointer-events-none" : "pointer-events-auto"}`}
         onClick={!isWaitingForFeedback ? handleSubmit : null}
       >
         {languageData.contact.button}
