@@ -57,7 +57,7 @@ export default function Footer() {
           <a href="tel:+48514484319">+48 514 484 319</a>
         </div>
         <div className="right font-[500] text-[24px] 600px:text-[20px]">
-          <a href="" target="_blank">
+          <a href="https://www.linkedin.com/company/palto-ai/" target="_blank">
             LinkedIn
           </a>
         </div>
