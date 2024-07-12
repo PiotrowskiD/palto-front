@@ -52,10 +52,8 @@ export default function Footer() {
             © {year} Palto. All rights reserved.
           </p>
         </div>
-        <div className="middle flex gap-[40px] font-[500] text-[24px] 996px:flex-col 996px:gap-[16px] 600px:text-[20px]">
-          <a href="mailto:hi@palto.ai">hi@palto.ai</a>
-        </div>
         <div className="right font-[500] text-[24px] 600px:text-[20px]">
+          <a href="mailto:hi@palto.ai">hi@palto.ai</a>
           <a href="https://www.linkedin.com/company/palto-ai/" target="_blank">
             LinkedIn
           </a>
