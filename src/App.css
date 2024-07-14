@@ -566,9 +566,13 @@ nav .options-wrapper .single-option:hover {
         padding: 0 40px;
     }
 
-    @media (max-width: 996px) {
+    @media (max-width: 1330px) {
         height: auto;
         flex-direction: column;
+        padding: 60px 40px;
+    }
+
+    @media (max-width: 996px) {
         padding: 60px 40px;
     }
 
@@ -653,7 +657,7 @@ nav .options-wrapper .single-option:hover {
         padding: 0 40px;
     }
 
-    @media (max-width: 996px) {
+    @media (max-width: 1330px) {
         height: auto;
         flex-direction: column;
         padding: 60px 40px;
